@@ -22,11 +22,37 @@
             mapOptions);
       }
       
-      google.maps.event.addListener(map, 'click', function(event) {
+google.maps.event.addListener(map, 'click', function(event) {                                       
 
-        placeMarker(event.latLng);
-        alert("latLng: "+event.latLng);
-      });
+    if (event.altKey) {
+
+        var geocoder= new google.maps.Geocoder();
+        var myLat = event.latLng.lat().toFixed(5);
+        var myLng = event.latLng.lng().toFixed(5);                      
+        var arrAddress = "";
+        var thisAddress = "Latitude :" + myLat + "<br/>" +
+                          "Longitude: " + myLng + "<br/>";
+        var i;
+
+        geocoder.geocode({'latLng': event.latLng}, function(results, status){
+            if (status == google.maps.GeocoderStatus.OK) {                                                  
+                arrAddress = results[0]['address_components'];
+                $.each(arrAddress, function (i, address_component) {
+                    if (address_component.types[0] == "route" ||
+                        address_component.types[0] == "street_number" ||
+                        address_component.types[0] == "locality" ||
+                        address_component.types[0] == "postal_code" ||
+                        address_component.types[0] == "administrative_area_level_1") {
+                            thisAddress += address_component.types[0] +":" + address_component.long_name + "<br/>";
+                        }
+                }); 
+                fnPlaceMarkers(event.latLng,thisAddress,"adhoc");
+            };
+        });
+    };
+ });
+}
+
     </script>
   </head>
   <body onload="initialize()">
