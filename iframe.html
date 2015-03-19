@@ -10,43 +10,30 @@
 <script>
     $(document).ready(function () {
 
-        // you want to enable the pointer events only on click;
-
-        
-
-
         $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
-        $('#canvas1').on('click', function () {
-            
-            $('#map_canvas1').removeClass('scrolloff');
-            // $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
-        });
         
-        
-        $('#canvas1').on("mouseup",function(){
-            $('#map_canvas1').addClass('scrolloff'); 
+        $('#map').on("mouseup",function(){          //otherwise lock it
+            $('#map').addClass('scrolloff'); 
+            //somehow the mouseup event doesn't get call...
         });
-        $('#canvas1').on("mousedown",function(){
-            $('#map_canvas1').removeClass('scrolloff');
+        $('#overlay').on("mousedown",function(){        //when mouse down, set free the mouse
+            $('#map').removeClass('scrolloff');
         });
 
-        // you want to disable pointer events when the mouse leave the canvas area;
 
-        $("#map_canvas1").mouseleave(function () {
-            $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        $("#map").mouseleave(function () {
+            $('#map').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
         
-        $("#map_canvas1").scroll(function(){
-            $("span").text( x+= 1);
-        });
+
     });
 </script>
 </head>
 <body>
 <p>Scrolled <span>0</span> times.</p>
-<section id="canvas1" class="map">
+<section id="overlay" class="map">
    
-<iframe id="map_canvas1" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
+<iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
     &q=Space+Needle,Seattle+WA" width="100%" height="500" frameborder="0" ></iframe>
 </section>
 
