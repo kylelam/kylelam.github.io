@@ -14,7 +14,15 @@
 
         $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
         $('#canvas1').on('click', function () {
-            $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+            // $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+        });
+        
+        
+        $('#canvas1').mouseup(function(){
+            $('#map_canvas1').addClass('scrolloff'); 
+        });
+        $('#canvas1').mousedown(function(){
+            $('#map_canvas1').removeClass('scrolloff');
         });
 
         // you want to disable pointer events when the mouse leave the canvas area;
