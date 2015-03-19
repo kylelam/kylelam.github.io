@@ -1,3 +1,5 @@
+<html>
+<body onload="onload();">
 <style>
     .scrolloff {
         pointer-events: none;
@@ -12,8 +14,10 @@
 
 
 <script>
-$(document).ready(function () {
-    $('#map').addClass('scrolloff'); // set the pointer events to none on doc ready
+function onload(){
+    document.getElementById("map").addClass('scrolloff');
 
 }
 </script>
+</body>
+</html>
