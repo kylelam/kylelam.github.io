@@ -1,31 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-
-</head>
-
-<body id="body" onload="onload();">
-
-<iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
-    &q=Space+Needle,Seattle+WA" width="100%" height="500" frameborder="0" ></iframe>
-
-
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-function onload(){
-
-}
-
-
 $(document).ready(function(){
-    $("body").mouseup(function(){
+    $("div").mouseup(function(){
         $(this).after("<p style='color:green;'>Mouse button released.</p>");
     });
-    $("body").mousedown(function(){
+    $("div").mousedown(function(){
         $(this).after("<p style='color:purple;'>Mouse button pressed down.</p>");
     });
 });
 </script>
+</head>
+<body>
+
+<div>
+
+<iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
+    &q=Space+Needle,Seattle+WA" width="100%" height="500" frameborder="0" ></iframe>
+
+    
+</div>
+
 </body>
 </html>
+
