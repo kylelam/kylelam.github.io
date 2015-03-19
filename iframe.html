@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+    .scrolloff {
+        pointer-events: none;
+    }
+</style>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("div").mouseup(function(){
-        alert();
-        $(this).after("<p style='color:green;'>Mouse button released.</p>");
+    $(document).ready(function () {
+
+        // you want to enable the pointer events only on click;
+
+        $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        $('#canvas1').on('click', function () {
+            $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+        });
+
+        // you want to disable pointer events when the mouse leave the canvas area;
+
+        $("#map_canvas1").mouseleave(function () {
+            $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        });
     });
-    $("div").mousedown(function(){
-        $(this).after("<p style='color:purple;'>Mouse button pressed down.</p>");
-    });
-});
 </script>
 </head>
 <body>
 
-<div style="height: 100%;width: 100%;">
-
+<section id="canvas1" class="map">
+   
 <iframe id="map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
     &q=Space+Needle,Seattle+WA" width="100%" height="500" frameborder="0" ></iframe>
-
-    
-</div>
+</section>
 
 </body>
 </html>
