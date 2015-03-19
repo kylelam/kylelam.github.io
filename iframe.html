@@ -10,9 +10,9 @@
 <script>
     $(document).ready(function () {
 
-        $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        $('#map').addClass('scrolloff'); // set the pointer events to none on doc ready
         
-        $('#map').on("mouseup",function(){          //otherwise lock it
+        $('#overlay').on("mouseup",function(){          //otherwise lock it
             $('#map').addClass('scrolloff'); 
             //somehow the mouseup event doesn't get call...
         });
@@ -25,6 +25,9 @@
             $('#map').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
         
+        $("#overlay").scroll(function(){
+            $("span").text( x+= 1);
+        });
 
     });
 </script>
