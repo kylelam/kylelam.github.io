@@ -13,8 +13,13 @@
         // you want to enable the pointer events only on click;
 
         
-         $('#canvas1').scroll(function(){
+         $('#canvas1').on("scroll",function(){
              $('#map_canvas1').addClass('scrolloff'); 
+             
+         }
+
+         $('#canvas1').off("scroll",function(){
+             $('#map_canvas1').removeClass('scrolloff'); 
              
          }
 
