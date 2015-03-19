@@ -17,6 +17,8 @@
 
         $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
         $('#canvas1').on('click', function () {
+            
+            $('#map_canvas1').removeClass('scrolloff');
             // $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
         });
         
@@ -34,12 +36,14 @@
             $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
         });
         
-        
+        $("div").scroll(function(){
+            $("span").text( x+= 1);
+        });
     });
 </script>
 </head>
 <body>
-
+<p>Scrolled <span>0</span> times.</p>
 <section id="canvas1" class="map">
    
 <iframe id="map_canvas1" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCjUE83FHrXTQWf9umcNDzyu0s7aNzHszw
