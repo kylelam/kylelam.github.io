@@ -13,14 +13,7 @@
         // you want to enable the pointer events only on click;
 
         
-         $('#canvas1').on("scroll",function(){
-             $('#map_canvas1').addClass('scrolloff'); 
-             
-         });
 
-
-
-        /*
 
         $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
         $('#canvas1').on('click', function () {
@@ -28,10 +21,10 @@
         });
         
         
-        $('#canvas1').mouseup(function(){
+        $('#canvas1').on("mouseup",function(){
             $('#map_canvas1').addClass('scrolloff'); 
         });
-        $('#canvas1').mousedown(function(){
+        $('#canvas1').on("mousedown",function(){
             $('#map_canvas1').removeClass('scrolloff');
         });
 
@@ -42,7 +35,6 @@
         });
         
         
-        */
     });
 </script>
 </head>
