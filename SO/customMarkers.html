@@ -17,28 +17,51 @@ function initialize() {
   
   URL=document.URL;
   
-  markers = URL.replace(/.*markers=([^&]*).*/g,"$1").split("|");
-  alert(markers.length);
-  
-  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-  var mapOptions = {
-    zoom: 4,
-    center: myLatlng
-  }
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  if (URL.indexOf("markers") != -1){
+	  
+	  markers = URL.replace(/.*markers=([^&]*).*/g,"$1").split("|");
+	  
+	  var myLatlng = new google.maps.LatLng(markers[0].split(",")[0],markers[0].split(",")[1]);
 
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
-  });
+	  var mapOptions = {
+	    zoom: 16,
+	    center: myLatlng
+	  }
+
+	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	  
+	  for (i =0; i < markers.length; i++){
+	  
+		  var myLatlng = new google.maps.LatLng(markers[i].split(",")[0],markers[i].split(",")[1]);
   
+		  var marker = new google.maps.Marker({
+		      position: myLatlng,
+		      map: map,
+		      title: "i: "+i
+		  });
+  
+	  }
+	  
+	  
+	  
+  } else {
+  
+  
+	  var myLatlng = new google.maps.LatLng(0,0);
+	  var mapOptions = {
+	    zoom: 16,
+	    center: myLatlng
+	  }
+	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	
+	
+  }
+  
+  
+
   
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
-
-
     </script>
   </head>
   <body>
