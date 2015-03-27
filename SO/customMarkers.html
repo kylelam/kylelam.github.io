@@ -14,6 +14,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
 function initialize() {
+  
+  URL=document.URL;
+  
+  markers = URL.replace(/.*markers=([^&]*).*/g,"$1").split("|");
+  alert(markers.length);
+  
   var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 4,
@@ -28,10 +34,6 @@ function initialize() {
   });
   
   
-  URL=document.URL;
-  
-  markers = URL.replace(/.*markers=([^&]*).*/g,"$1");
-  alert(markers);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
