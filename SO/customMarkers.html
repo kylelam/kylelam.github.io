@@ -28,8 +28,10 @@ function initialize() {
   });
   
   
+  URL=document.URL;
   
-alert(document.URL);
+  markers = URL.replace(/.*markers=([^&]*).*/g,"$1");
+  alert(markers);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
