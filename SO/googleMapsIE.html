@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+// This example displays a marker at the center of Australia.
+// When the user clicks the marker, an info window opens.
+
+function initialize() {
+
+    var mapOptions = {
+        center: new google.maps.LatLng(50.2014, 8.5804),
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false,
+        panControl: true,
+        draggable: false
+    };
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var contentString = '<div id="mapinfo_box" style="color:#666;max-width:280px;">' +
+        '<h1 id="mapinfo_h1">Schmerzzentrum</h1>' +
+        '<div id="mapinfo_body">' +
+        '<p style="font-size:16px;margin-bottom:15px;">Rathausplatz 6 <br />61440 Oberursel (Taunus)</p>' +
+        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(50.2014, 8.5804),
+        title: "Schmerzzentrum"
+    });
+
+
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+
+}
+
+
+google.maps.event.addDomListener(window, 'resize', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
