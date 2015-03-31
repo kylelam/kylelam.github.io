@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+ <!-- saved from url=(0016)localhost -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+  
+  
+  
+    
+      <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry,places&ext=.js"></script>
+    
+  
+  <style type='text/css'>
+    html, body, #map_canvas {
+    height: 500px;
+    width: 500px;
+    margin: 0px;
+    padding: 0px
+}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+var directionDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+var origin = " 1837 N. Kinser Pike, Bloomington, IN 47404 ";
+var destination = " 520 W NORTHLANE DR, BLOOMINGTON IN 47404 ";
+var waypoints = [];
+var markers = [];
+var directionsVisible = false;
+
+function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var store = new google.maps.LatLng(35.930251, -86.824265);
+    var myOptions = {
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: store,
+        panControl: true,
+        zoomControl: true,
+        scaleControl: true
+    }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+    calcRoute();
+}
+
+function addMarker(latlng) {
+    markers.push(new google.maps.Marker({
+        position: latlng,
+        map: map,
+        icon: "http://maps.google.com/mapfiles/marker" + String.fromCharCode(markers.length + 65) + ".png"
+    }));
+}
+
+function calcRoute() {
+    if (origin == null) {
+        alert("Click on the map to add a start point");
+        return;
+    }
+
+    if (destination == null) {
+        alert("Click on the map to add an end point");
+        return;
+    }
+
+    var request = {
+        origin: origin,
+        destination: destination,
+        waypoints: waypoints,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING,
+        optimizeWaypoints: true,
+        avoidHighways: true,
+        avoidTolls: true
+    };
+    directionsService.route(request, function (directionsresult, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(directionsresult);
+        }
+    });
+    directionsVisible = true;
+}
+
+function updateMode() {
+    if (directionsVisible) {
+        calcRoute();
+    }
+}
+
+function printTextDirections() {
+    for (var i = 0; i < directionsresult.routes.length; i++) {
+        for (var j = 0; j < directionsresult[i].legs.length; j++) {
+            alert(directionsresult.routes[i].legs[j]);
+        }
+    }
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <div id='map_canvas' style='width: 65%; height: 580px; float:left; border: 1px solid black;'></div>
+<div id='directionsPanel' style='width: 30%; height:580px; float:right; border; 1px solid black;'></div>
+  
+</body>
+
+
+</html>
+
