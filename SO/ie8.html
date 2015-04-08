@@ -27,14 +27,12 @@ function initialize() {
       map: map,
       title: 'Hello World!'
   });
-  
   $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=googleplex%20mountain%20view&sensor=false', null, function (data) 
   {
       var p = data.results[0].geometry.location
       alert(data.results[0].formatted_address); 
     
-  }
-
+  });
 google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
