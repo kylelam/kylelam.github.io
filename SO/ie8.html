@@ -31,7 +31,7 @@ function initialize() {
   });
         */
         
-  $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=google+cafe+mountain+view&sensor=false', null, function (data) 
+  var dummy = $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=google+cafe+mountain+view&sensor=false', null, function (data) 
   {
       var p = data.results[0].geometry.location
         alert(data.results[0].formatted_address); 
