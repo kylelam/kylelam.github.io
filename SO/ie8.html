@@ -11,28 +11,46 @@
         padding: 0px
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.19&signed_in=true"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.19&signed_in=true"></script>
+    
     <script>
 function initialize() {
-  var myLatlng = new google.maps.LatLng(37.422,-122.084058);
+  var myLatlng = new google.maps.LatLng(37.322,-122.184058);
   var mapOptions = {
-    zoom: 4,
+    zoom: 10,
     center: myLatlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+        /*
   var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
       title: 'Hello World!'
   });
-  $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=googleplex%20mountain%20view&sensor=false', null, function (data) 
+        */
+        
+  $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=google+cafe+mountain+view&sensor=false', null, function (data) 
   {
       var p = data.results[0].geometry.location
-      alert(data.results[0].formatted_address); 
+        //alert(data.results[0].formatted_address); 
     
-  });
+        var latlng = new google.maps.LatLng(p.lat, p.lng);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: data.results[0].formatted_address
+            });
+        
+        gmarkers.push(marker); 
+  });        
+        
+        
+   geoCodeAddress(map);     
+}
+        
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
