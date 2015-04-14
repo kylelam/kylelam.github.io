@@ -1,0 +1,488 @@
+<html>
+<head>
+	<title>Sunshine</title>
+		<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<!-- Include the jQuery library -->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<!-- Include the jQuery Mobile library -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+	<div data-role="page" id="list" >
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<img class="ui-btn-left" src="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/ic_logo.png" style="height:80%">
+			<h2> </h2>
+			<a class="ui-btn-right" href="#popupMenuDetail" data-rel="popup" data-transition="slidedown">...</a>
+			<div data-role="popup" id="popupMenuDetail" data-theme="a">
+			        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+			            <li><a href="#maps">View Location</a></li>
+			            <li><a href="#settings">Settings</a></li>
+			        </ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			
+
+			<ul data-role="listview" id="weeklyForecast">
+				<li data-theme="b" id="todaysItemHolder">
+					<a href="#detail" onclick="updateDetail(0);">
+						<table width="100%">
+							<tr>
+								<td width="20%">
+								</td>
+								<td width="40%">
+									<h2 style="color:white" id="todaysDate">Tuesday, March 3</h2>
+
+									<p style="color:white; font-size:600%;margin-top: 0px;margin-bottom: 0px;" id="todaysMax">18</p>
+									<p style="color:white; font-size:300%;margin-top: 0px;margin-bottom: 0px;" id="todaysMin">10</p>
+								</td>
+								<td width="40%" align="center" valign="top">
+									<div>
+										<img style="min-width: 100%; max-width:100%; height: auto;" id="todaysIcon" src="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/art_clear.png">
+									</div>
+									<p style="color:white; font-size:150%;margin-top: 0px;margin-bottom: 0px;" id="todaysDetail">Sunny</p>
+								</td>
+
+							</tr>
+						</table>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+
+		<div data-role="footer">
+			<h6 id="lastUpdate">Data pulled from open weather map</h6>
+		</div>
+	</div> 
+
+	<div data-role="page" id="detail" >
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#list">&lt;</a>
+			<img class="ui-btn-left" src="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/ic_logo.png" style="height:80%">
+			<h2> </h2>
+			
+			<a href="#popupMenu" data-rel="popup" data-transition="slidedown">...</a>
+			<div data-role="popup" id="popupMenu" data-theme="a">
+			        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+			            <li><a href="#settings">Settings</a></li>
+			        </ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+
+			<table>
+				<tr>
+					<td style="width:50%" valign="top">
+						<p style="color:DimGray; font-size:130%;margin-top: 0px;margin-bottom: 0px;" id="detailsDayOfWeek">Tuesday</p>
+						<p style="color:Gray; font-size:100%;margin-top: 0px;margin-bottom: 0px;" id="detailsDateMonth">March 3</p>
+						
+					</td>
+				</tr><tr>
+					<td style="width:50%">
+						<p style="color:Black; font-size:600%;margin-top: 0px;margin-bottom: 0px;" id="detailsMax">18</p>
+						<p style="color:DimGray; font-size:350%;margin-top: 0px;margin-bottom: 0px;" id="detailsMin">10</p>
+						<p style="color:DimGray; font-size:110%;margin-top: 5;margin-bottom: 5;" id="detailsHumidity">Humidity: 0%</p>
+						<p style="color:DimGray; font-size:110%;margin-top: 5px;margin-bottom: 5px;" id="detailsPressure">Pressure: 0hPa</p>
+						<p style="color:DimGray; font-size:110%;margin-top: 5px;margin-bottom: 5px;" id="detailsWind">Wind: 0km/h</p>
+						
+					</td>
+					<td style="width:50%" align="center" valign="top">
+						<div>
+							<img style="min-width: 100%; max-width:100%; height: auto;" id="detailsIcon" src="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/art_clear.png">
+						</div>
+						<p style="color:Gray; font-size:100%;margin-top: 0px;margin-bottom: 0px;" id="detailsDetail">Sunny</p>
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+
+	</div> 
+
+
+	<div data-role="page" id="settings" >
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#list">&lt;</a>
+			<img class="ui-btn-left" src="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/ic_logo.png" style="height:80%">
+			<h2> </h2>
+		</div>
+
+		<div data-role="main" class="ui-content">
+
+			
+
+			<ul data-role="listview">
+				<li>
+				
+					<a href="#popupLocation" data-rel="popup" data-position-to="window"
+						class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-transition="pop">
+						<h3>Location</h3>
+						<p id="locationSelectionString">London, UK</p>
+					</a>
+				
+					<div data-role="popup" id="popupLocation" data-theme="a" class="ui-corner-all">
+						
+							<div style="padding:10px 20px;">
+								<h3 style="margin-top: 0px; margin-bottom: 0px;">Location</h3>
+								<hr>
+								<table width="100%">
+									<tr>
+										<input id="locationSelectionInput" type="text" name="location" value="" placeholder="location" data-theme="a" style="margin-top: 0px; margin-bottom: 0px;">
+									</tr>
+									<tr>
+										<td width="50%">
+											<button style="margin-top: 0px; margin-bottom: 0px;" onclick="changeLocationCanceled();">Cancel</button>
+										</td>
+										<td width="50%">
+											<button style="margin-top: 0px; margin-bottom: 0px;" onclick="changeLocation();">OK</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+					</div>
+				</li>
+				
+				<li>
+					<h3>Temperature Unit</h3>
+					<p>Metric</p>
+				</li>
+			</ul>
+		</div>
+
+
+	</div> 
+
+
+	
+	<script>
+	
+	
+		function createTable(title, detail, max, min) {
+					//create table in alink
+					var weeklyForecastItemTable = document.createElement("table");
+					//weeklyForecastItemTable.cellpadding="0";
+					//weeklyForecastItemTable.cellspacing="0";
+					weeklyForecastItemTable.border="0";
+					weeklyForecastItemTable.width="100%";
+					//create 1st tr row
+					var weeklyForecastItemTableTr1 = document.createElement("tr");
+					//create 1st tr 1st td cor and add to tr1
+					var weeklyForecastItemTableTr1Td1 = document.createElement("td");
+					var weeklyForecastItemTableTr1Td1H2 = document.createElement("h2");
+					var weeklyForecastItemTableTr1Td1H2Text = document.createTextNode(title);
+					weeklyForecastItemTableTr1Td1H2.appendChild(weeklyForecastItemTableTr1Td1H2Text);
+					weeklyForecastItemTableTr1Td1.appendChild(weeklyForecastItemTableTr1Td1H2);
+					weeklyForecastItemTableTr1.appendChild(weeklyForecastItemTableTr1Td1);
+					//create 1st tr 2nd td cor and add to tr1
+					var weeklyForecastItemTableTr1Td2 = document.createElement("td");
+					weeklyForecastItemTableTr1Td2.width="15%";
+					var weeklyForecastItemTableTr1Td2H2 = document.createElement("h2");
+					weeklyForecastItemTableTr1Td2H2.align="center";
+					var weeklyForecastItemTableTr1Td2H2Text = document.createTextNode(max+"°");
+					weeklyForecastItemTableTr1Td2H2.appendChild(weeklyForecastItemTableTr1Td2H2Text);
+					weeklyForecastItemTableTr1Td2.appendChild(weeklyForecastItemTableTr1Td2H2);
+					weeklyForecastItemTableTr1.appendChild(weeklyForecastItemTableTr1Td2);
+					//add tr1 into table
+					weeklyForecastItemTable.appendChild(weeklyForecastItemTableTr1);
+					//create 2nd tr row
+					var weeklyForecastItemTableTr2 = document.createElement("tr");
+					//create 2nd tr 1st td cor and add to tr2
+					var weeklyForecastItemTableTr2Td1 = document.createElement("td");
+					var weeklyForecastItemTableTr2Td1H2 = document.createElement("p");
+					//weeklyForecastItemTableTr2Td1H2.style = "padding-left: 5px;";
+					var weeklyForecastItemTableTr2Td1H2Text = document.createTextNode( /*"　"+*/ detail);
+					weeklyForecastItemTableTr2Td1H2.appendChild(weeklyForecastItemTableTr2Td1H2Text);
+					weeklyForecastItemTableTr2Td1.appendChild(weeklyForecastItemTableTr2Td1H2);
+					weeklyForecastItemTableTr2.appendChild(weeklyForecastItemTableTr2Td1);
+					//create 2nd tr 2nd td cor and add to tr2
+					var weeklyForecastItemTableTr2Td2 = document.createElement("td");
+					weeklyForecastItemTableTr2Td2.width="15%";
+					var weeklyForecastItemTableTr2Td2H2 = document.createElement("p");
+					weeklyForecastItemTableTr2Td2H2.align="center";
+					var weeklyForecastItemTableTr2Td2H2Text = document.createTextNode(min+"°");
+					weeklyForecastItemTableTr2Td2H2.appendChild(weeklyForecastItemTableTr2Td2H2Text);
+					weeklyForecastItemTableTr2Td2.appendChild(weeklyForecastItemTableTr2Td2H2);
+					weeklyForecastItemTableTr2.appendChild(weeklyForecastItemTableTr2Td2);
+					//add tr2 into table
+					weeklyForecastItemTable.appendChild(weeklyForecastItemTableTr2);
+					return weeklyForecastItemTable;
+		}
+		function createListItem (imageLink, title, detail, max, min, itemNumber){
+				var weeklyForecastItem = document.createElement("li");
+				//weeklyForecastItem["data-theme"]="b";
+				var weeklyForecastLink = document.createElement("a");
+				weeklyForecastLink.href="#detail";
+				weeklyForecastLink.onclick=function(){
+					
+					updateDetail(itemNumber);
+				};
+				
+				//create image add to alink
+				var weeklyForecastImg = document.createElement("img");
+				weeklyForecastImg.src = imageLink;
+				weeklyForecastLink.appendChild(weeklyForecastImg);
+				//create table in alink
+				var weeklyForecastItemTable = createTable(title, detail, max, min);
+				//add table back to alink
+				weeklyForecastLink.appendChild(weeklyForecastItemTable);
+				//add alink back to li
+				weeklyForecastItem.appendChild(weeklyForecastLink);
+				return weeklyForecastItem;
+		}
+		function getUdacityIconName (dailyWeatherIcon) {
+			var codeToUdacityIcon = {		w01 : "clear", 
+											w02 : "light_clouds",
+											w03 : "cloudy",
+											w04 : "cloudy",
+											w09 : "light_rain",
+											w10 : "rain",
+											w11 : "storm",
+											w13 : "snow",
+											w50 : "fog"
+										};
+			return codeToUdacityIcon["w"+dailyWeatherIcon.replace(/[a-z]/g,"") ];
+		}
+		function getUdacityIconURL(dailyWeatherIcon, type) {
+			
+			var baseURL="https://raw.githubusercontent.com/kylelam/SunshineJS/master/res/";
+			var fileType=".png";
+			if ( type == "ICON" ) {
+				return baseURL + "ic_" + getUdacityIconName(dailyWeatherIcon) + fileType;
+			} else {
+				var name=getUdacityIconName(dailyWeatherIcon)+"";
+				return baseURL + "art_" + name.replace("cloudy", "clouds") + fileType;
+			}
+		}
+		function appendToListFromTo(x, y){
+			for (i = x; i <= y; i++){	//to add the elenment to list
+				var weeklyForecastList = document.getElementById("weeklyForecast");  //ul
+				var weeklyForecastItem = createListItem(	weeklyForecastIconLinkArray[i],weeklyForecastTitleArray[i],
+															weeklyForecastDetailArray[i],weeklyForecastMaxTemp[i],
+															weeklyForecastMinTemp[i], i);
+				weeklyForecastList.appendChild(weeklyForecastItem);
+				//$("#weeklyForecast").append(weeklyForecastItem);
+			}
+		}
+		function clearList(){
+			var weeklyForecastList = document.getElementById("weeklyForecast");  //ul
+			
+			
+			var todaysItemHolder = document.getElementById("todaysItemHolder"); 
+			weeklyForecastList.innerHTML = "";
+			
+			weeklyForecastList.appendChild(todaysItemHolder);
+		}
+		function refreshPage(){
+			
+			try{
+				$("#weeklyForecast").listview("refresh");
+			} finally {
+				return 0;
+			}
+		}
+		function parseWeatherJsonString(jsonString){
+			weeklyForecastJsonObj = JSON.parse(jsonString);
+			
+			
+			weeklyForecastURLArray = [];
+			weeklyForecastIconLinkArray = [];
+			weeklyForecastArtLinkArray = [];
+			weeklyForecastTitleArray = [];
+			weeklyForecastDetailArray = [];
+			weeklyForecastMinTemp = [];
+			weeklyForecastMaxTemp = [];
+			weeklyForecastDayOfWeek = [];
+			weeklyForecastDate = [];
+			weeklyForecastMonth = [];
+			weeklyForecastHumidity = [];
+			weeklyForecastPressure = [];
+			weeklyForecastWind = [];
+			//weeklyForecastJsonObj = JSON.parse(data);
+			for (i = 0; i < 7; i++) { 
+   				var dailyDate = weeklyForecastJsonObj.list[i].dt;
+				var dailyTemp = weeklyForecastJsonObj.list[i].temp.day;
+				var dailyMin = weeklyForecastJsonObj.list[i].temp.min;
+				var dailyMax = weeklyForecastJsonObj.list[i].temp.max;
+				var dailyPressure = weeklyForecastJsonObj.list[i].pressure;
+				var dailyHumidity = weeklyForecastJsonObj.list[i].humidity;
+				var dailyWind = weeklyForecastJsonObj.list[i].speed;
+				var dailyWeather = weeklyForecastJsonObj.list[i].weather[0].main;
+				var dailyWeatherIcon = weeklyForecastJsonObj.list[i].weather[0].icon;
+				var timestamp = dailyDate;
+				var a = new Date(timestamp*1000);
+				var dayOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][a.getDay()]
+				var date = a.getDate();
+				var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
+							'August', 'September', 'October', 'November', 'December'][a.getMonth()];
+				weeklyForecastIconLinkArray.push( getUdacityIconURL(dailyWeatherIcon, "ICON" ) );
+				weeklyForecastArtLinkArray.push( getUdacityIconURL(dailyWeatherIcon, "ART" ) );
+				weeklyForecastTitleArray.push( dayOfWeek );
+				weeklyForecastDetailArray.push( dailyWeather );
+				weeklyForecastMinTemp.push( (dailyMin+0.5).toFixed(0) );
+				weeklyForecastMaxTemp.push( (dailyMax+0.5).toFixed(0) );
+				
+				weeklyForecastDayOfWeek.push( dayOfWeek );
+				weeklyForecastDate.push( date );
+				weeklyForecastMonth.push( month );
+				weeklyForecastHumidity.push( dailyHumidity );
+				weeklyForecastPressure.push( (dailyPressure+0.5).toFixed(0) );
+				weeklyForecastWind.push( dailyWind );
+			}
+		}
+		function updateDetail(day){
+			
+			document.getElementById("detailsMax").innerHTML = weeklyForecastMaxTemp[day]+"°";
+			document.getElementById("detailsMin").innerHTML = weeklyForecastMinTemp[day]+"°";
+			document.getElementById("detailsIcon").src = weeklyForecastArtLinkArray[day];
+			document.getElementById("detailsDetail").innerHTML = weeklyForecastDetailArray[day];
+			
+			document.getElementById("detailsDayOfWeek").innerHTML = weeklyForecastDayOfWeek[day];
+			document.getElementById("detailsDateMonth").innerHTML = weeklyForecastMonth[day]+ " " + weeklyForecastDate[day];
+			
+			
+			document.getElementById("detailsHumidity").innerHTML = "Humidity: " + weeklyForecastHumidity[day]+ "%";
+			document.getElementById("detailsPressure").innerHTML = "Pressure: " + weeklyForecastPressure[day]+ "hPa";
+			document.getElementById("detailsWind").innerHTML = "Wind: " + weeklyForecastWind[day]+ "km/h";
+			
+		}
+		
+		function updateToday(){
+			document.getElementById("todaysDate").innerHTML = weeklyForecastDayOfWeek[0] + ", " + weeklyForecastMonth[0] + " " + weeklyForecastDate[0];
+			
+			document.getElementById("todaysMax").innerHTML = weeklyForecastMaxTemp[0]+"°";
+			document.getElementById("todaysMin").innerHTML = weeklyForecastMinTemp[0]+"°";
+			document.getElementById("todaysIcon").src = weeklyForecastArtLinkArray[0];
+			document.getElementById("todaysDetail").innerHTML = weeklyForecastDetailArray[0];
+		}
+		function getAndParseJSON( URL ){
+			$.getJSON( URL, function( weeklyForecastJsonObj ) {
+				clearList();
+				var jsonString=JSON.stringify(weeklyForecastJsonObj);
+				parseWeatherJsonString(jsonString);
+				localStorage.setItem("jsonString", jsonString);
+				
+				var currentDate = new Date();
+				var currentUnixTime = Date.parse(currentDate)/1000;
+				localStorage.setItem("lastUpdate", currentUnixTime);
+				
+				var lastUpdateDateString = "Last Update: " + currentDate.toLocaleDateString() + " " + currentDate.toLocaleTimeString();
+				document.getElementById("lastUpdate").innerHTML = lastUpdateDateString;
+				
+				localStorage.setItem("lastUpdateDateString", lastUpdateDateString);
+				
+			
+				updateView();
+				
+			});
+		}
+		
+		function updateView(){
+			
+			updateToday();
+			appendToListFromTo(1,6);
+			refreshPage();
+			
+		}
+		
+		function URLBuilder(zipcode){
+			
+			return "http://api.openweathermap.org/data/2.5/forecast/daily?q="+zipcode+"&mode=json&units=metric&cnt=7&APPID=dd0d20865737740466fe7a59fff524a1";
+		}
+		
+		function changeLocationCanceled(){
+			document.getElementById("locationSelectionInput").value=currentLocation;
+			$( "#popupLocation" ).popup( "close" );
+		}
+		
+		function changeLocation(){
+			
+			var newLocation = document.getElementById("locationSelectionInput").value;
+			var currentLocation=localStorage.getItem("location");
+			
+			if (newLocation != currentLocation){
+				currentLocation=newLocation;
+				localStorage.setItem("location", currentLocation);
+				localStorage.setItem("lastUpdate", 0);
+				document.getElementById("locationSelectionString").innerHTML=currentLocation;
+				URL = URLBuilder(currentLocation);
+				getAndParseJSON(URL);
+				updateView();
+				
+			}
+			
+			$( "#popupLocation" ).popup( "close" );
+			
+			
+		}
+		
+		
+		
+		var URL = "";
+		var expiredTimeInHr = 1;
+		
+		// Check browser support
+		if (typeof(Storage) != "undefined") {
+			
+			var currentDate = new Date();
+			var currentUnixTime = Date.parse(currentDate)/1000;
+			//check if first time
+			if (localStorage.getItem("lastUpdate")==null){
+				localStorage.setItem("lastUpdate", 0);
+				localStorage.setItem("location", "94112, US");
+			}
+			currentLocation=localStorage.getItem("location");
+			URL = URLBuilder(currentLocation);
+			//update location
+			//locationSelectionString
+			//locationSelectionInput@value
+			document.getElementById("locationSelectionString").innerHTML=currentLocation;
+			document.getElementById("locationSelectionInput").value=currentLocation;
+			
+			
+			
+			
+			var expireTime = parseInt(localStorage.getItem("lastUpdate")) + (expiredTimeInHr * 3600);
+			//check if expired
+			
+			if ( expireTime < currentUnixTime ){
+				getAndParseJSON(URL);
+			} 
+			
+			if (localStorage.getItem("jsonString")!=null){
+				
+				var jsonString = localStorage.getItem("jsonString");
+				
+				parseWeatherJsonString(jsonString);
+				
+				//update last update
+				var lastUpdateDate = new Date();
+				lastUpdateDate.setTime( Date.parse(parseInt(localStorage.getItem("lastUpdate"))*1000 ));
+				document.getElementById("lastUpdate").innerHTML = localStorage.getItem("lastUpdateDateString");
+			
+				updateView();
+			
+			}
+			
+		} else {
+		    getAndParseJSON(URL);
+		}
+	</script>
+
+
+
+	
+
+
+
+</body>
+
+
+</html>
