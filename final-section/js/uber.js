@@ -38,7 +38,6 @@ function getEstimatesForUserLocation(latitude,longitude) {
     headers: {
     	Authorization: "Token " + uberServerToken
     },
-    dataType: 'jsonp',
     data: { 
     	start_latitude: latitude,
     	start_longitude: longitude,
