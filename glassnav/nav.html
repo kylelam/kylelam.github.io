@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=geometry"></script>
+
+	<meta charset="utf-8">
+	<title>Directions service</title>
+	<style>
+	html, body  {
+		height: 100%;
+		width:100%;
+		margin: 0px;
+		padding: 0px
+}
+
+/*
+.turn-sharp-left	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px 0px ;	}
+.turn-left-grey		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -35px ;	}
+.uturn-right		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -70px ;	}
+.turn-slight-right	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -105px ;	}
+.turn-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -140px ;	}
+.turn-slight-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -175px ;	}
+.straight-grey		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -210px ;	}
+.roundabout-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -245px ;	}
+.merge				{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -280px ;	}
+.turn-sharp-left-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -315px ;	}
+.turn-sharp-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -350px ;	}
+.roundabout-left	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -385px ;	}
+.ramp-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -420px ;	}
+.roundabout-right	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -455px ;	}
+.roundabout-left-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -490px ;	}
+.merge-grey			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -525px ;	}
+.ramp-left-grey		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -560px ;	}
+.uturn-left			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -595px ;	}
+.uturn-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -630px ;	}
+.fork-right-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -665px ;	}
+.ferry-grey			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -700px ;	}
+.turn-slight-left	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -735px ;	}
+.ferry-train-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -770px ;	}
+.turn-left			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -805px ;	}
+.fork-right			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -840px ;	}
+.turn-slight-left-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -875px ;	}
+.uturn-left-grey	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -910px ;	}
+.turn-right			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -945px ;	}
+.ramp-right			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -980px ;	}
+.fork-left-grey		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1015px ;	}
+.straight			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1050px ;	}
+.ramp-left			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1085px ;	}
+.ferry-train		{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1120px ;	}
+.turn-sharp-right	{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1155px ;	}
+.fork-left			{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1190px ;	}
+.ferry				{ background: url('https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png') 0px -1225px ;	}
+*/
+
+
+.ferry{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1228px}
+.ferry-train{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1132px}
+.merge{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -286px}
+.straight{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1068px}
+.fork-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1100px}
+.ramp-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1196px}
+.roundabout-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -394px}
+.turn-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -826px}
+.turn-sharp-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 0}
+.turn-slight-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -756px}
+.uturn-left{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -610px}
+.fork-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -998px}
+.ramp-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -858px}
+.roundabout-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -464px}
+.turn-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -966px}
+.turn-sharp-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -1164px}
+.turn-slight-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -102px}
+.uturn-right{background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png); background-position:0 -70px}
+.maneuver {background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/maneuvers_hdpi.png);}
+
+
+b {
+	font-size: 135%;
+}
+
+#map-canvas{
+	
+		height: 300px;
+		width: 300px;
+		margin: 0px;
+		padding: 0px
+	
+}
+
+#mirror {
+	
+	margin-left: auto;
+	margin-right: auto;
+	height: 300px;
+	width: 300px;
+	
+	border: 1px solid red;
+	-webkit-perspective: 300px; /* Chrome, Safari, Opera  */
+	perspective: 300px;
+	
+	-webkit-transform: rotateY(180deg); /* Safari */
+	transform: rotateY(180deg); /* Standard syntax */
+	-webkit-transform: rotateX(180deg); /* Safari */
+	transform: rotateX(180deg); /* Standard syntax */
+}
+
+#tilt {
+	
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+	position: absolute;
+	border: 1px solid green;
+	-webkit-transform: rotateX(60deg); /* Chrome, Safari, Opera  */
+	transform: rotateX(60deg);
+	
+	
+	
+}
+
+#rotate {
+	
+	border: 1px solid black;
+		/* Rotate div */
+	-ms-transform: rotate(0deg); /* IE 9 */
+	-webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */ */
+	transform: rotate(0deg);
+}
+
+
+#main {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 10%;
+	padding-bottom: 0px;
+
+	background-color: black;
+}
+
+#page {
+	background-color: grey;
+
+}
+
+#textDisplay {
+	vertical-align: middle;
+	background-color: green; 
+	width:100%; 
+	height:30%; 
+	color: #ffffff; 
+	font-family: sans-serif, Arial, Helvetica; 
+	font-size: 100%;  
+	display: table;
+}
+
+#textDisplayIconZoomer {
+	zoom: 2; 
+	-moz-transform: scale(2); 
+	-webkit-filter: invert(100%); 
+	filter: invert(100%);
+	padding-top: 5%;
+}
+
+#textDisplayIcon{
+	height: 35px; 
+	width: 35px
+}
+
+#tilt2 {
+	
+	padding: 50px;
+	position: absolute;
+	border: 1px solid blue;
+	background-color: red;
+	-webkit-transform: rotateX(30deg); /* Chrome, Safari, Opera  */
+	transform: rotateX(30deg);
+}
+
+	</style>
+	<script>
+		function errorMessage(message){
+
+			alert(message);
+		}
+
+
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var map;
+		var myRoute = null;
+		var touchedCurrentPoint = false;
+		var currentStep = 0;
+		//var oldPosition;
+
+		function mapInitialize(position) {
+
+			var MY_MAPTYPE_ID = 'custom_style';
+			divSetUp();
+			oldPosition = position;
+			directionsDisplay = new google.maps.DirectionsRenderer();
+			var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			var mapOptions = {
+				zoom:18,
+				center: myLocation,
+				disableDefaultUI: true,
+				mapTypeId: MY_MAPTYPE_ID
+			};
+			map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+
+			var featureOpts = [
+			  {
+				"stylers": [
+				  { "invert_lightness": true }
+				]
+			  },{
+				"featureType": "road",
+				"stylers": [
+				  { "invert_lightness": true },
+				  { "lightness": 50 },
+				  { "gamma": 0.50 }
+				]
+			  },{
+				"featureType": "transit",
+				"stylers": [
+				  { "lightness": -50 }
+				]
+			  },{
+				"featureType": "poi",
+				"stylers": [
+				  { "visibility": "simplified" },
+				  { "lightness": -25 }
+				]
+			  },{
+				"featureType": "water",
+				"stylers": [
+				  { "lightness": -50 }
+				]
+			  },{
+				"featureType": "poi.park",
+				"stylers": [
+				  { "lightness": -50 }
+				]
+			  }
+			];
+
+			var styledMapOptions = {
+				name: 'Custom Style'
+			};
+			var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+			map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+
+			var blueDot = {
+				path: 'M 0,2 1,3 2,4 3,3 4,2 3,1 2,0 1,1 0,2 z',
+				fillColor: 'white',
+				fillOpacity: 1,
+				scale: 1,
+				strokeColor: 'blue',
+				strokeWeight: 20,
+				strokeOpacity: 0.4,
+			};
+
+			marker = new google.maps.Marker({
+				position: myLocation,
+				map: map,
+				icon: blueDot
+			});
+
+			directionsDisplay.setMap(map);
+			heading = position.coords.heading;
+			calcRoute(position.coords.latitude, position.coords.longitude);
+		}
+
+
+		function calcRoute(currentLat, currentLng) {
+			var start = currentLat+", "+currentLng;
+			var end = getParameter("q");//"San Francisco";//"22.136078,113.560106";;
+			var request = {
+				origin:start,
+				destination:end,
+				travelMode: google.maps.TravelMode.DRIVING,
+			};
+			directionsService.route(request, function(response, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					directionsDisplay.setDirections(response);
+
+					//store route
+
+					var greenDot = {
+						path: 'M 0,2 1,3 2,4 3,3 4,2 3,1 2,0 1,1 0,2 z',
+						fillColor: 'white',
+						fillOpacity: 1,
+						scale: 1,
+						strokeColor: 'green',
+						strokeWeight: 30,
+						strokeOpacity: 0.4,
+					};
+
+					myRoute = response.routes[0].legs[0];
+					for (var i = 0; i < myRoute.steps.length; i++) {
+						var marker = new google.maps.Marker({
+							position: myRoute.steps[i].start_location,
+							map: map,
+							icon: greenDot
+						});
+						console.log(myRoute.steps[i].instructions);
+
+						//attachInstructionText(marker, myRoute.steps[i].instructions);
+						//markerArray[i] = marker;
+					}
+
+					setTextDisplay(currentStep);
+
+					//start watch
+					//map.setZoom(10);
+					navigator.geolocation.watchPosition(watchPosition);
+				} else {
+					errorMessage("fail to get direction.")
+				}
+			});
+		}
+
+
+		function initialize(){
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(mapInitialize, showGPSError);
+			}
+		}
+
+		function showGPSError(error) {
+			switch(error.code) {
+				case error.PERMISSION_DENIED:
+					errorMessage("User denied the request for Geolocation.");
+					break;
+				case error.POSITION_UNAVAILABLE:
+					errorMessage("Location information is unavailable.");
+					break;
+				case error.TIMEOUT:
+					errorMessage("The request to get user location timed out.");
+					break;
+				case error.UNKNOWN_ERROR:
+					errorMessage("An unknown error occurred.");
+					break;
+			}
+		}
+	
+
+		//heading is to avg out the heading reading from gps
+		var heading=0;
+		function watchPosition(position){
+
+
+			//update zoom level
+			//if ((myRoute.steps[turnNumber].)
+			map.setZoom(17);
+
+
+			//update map
+			var boundNE = map.getBounds().getNorthEast();
+			var boundSW = map.getBounds().getSouthWest();
+
+
+			var radius = (Math.abs(boundNE.lat()-boundSW.lat())+Math.abs(boundNE.lng()-boundSW.lng()))/4.0*0.9;
+			heading = (position.coords.heading+heading*4)/5;
+
+			var diffLat = Math.cos(heading/180*Math.PI)*radius;
+			var diffLng = Math.sin(heading/180*Math.PI)*radius;
+
+			var centerPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			var panToPosition = new google.maps.LatLng(position.coords.latitude+diffLat, position.coords.longitude+diffLng);
+			map.panTo(panToPosition);
+			marker.setPosition(centerPosition);
+
+			//rotate map
+			//var rotateDiv = document.getElementById("rotate");
+			//rotateDiv.style.WebkitTransform = "rotate("+haeding+"deg)";
+
+			// Code for Chrome, Safari, Opera
+			document.getElementById("rotate").style.WebkitTransform = "rotate("+(360-heading)+"deg)"; 
+			// Code for IE9
+			document.getElementById("rotate").style.msTransform = "rotate("+(360-heading)+"deg)"; 
+			// Standard syntax
+			document.getElementById("rotate").style.transform = "rotate("+(360-heading)+"deg)"; 
+
+			//set display text logic
+			distanceToCurrentStep = distanceTo(currentStep, position);
+			document.getElementById("debug").innerHTML=distanceToCurrentStep;
+
+			if ( distanceToCurrentStep <= 25 ) {
+				touchedCurrentPoint = true;
+				//speakDirection(currentStep);
+			}
+			if ( touchedCurrentPoint && distanceToCurrentStep > 25 ){
+				currentStep++;
+				touchedCurrentPoint = false;
+				setTextDisplay(currentStep);
+
+				//speakDirection(currentStep);
+			}
+
+			//300ft = 91.44m 
+			if ( distanceToCurrentStep < 91.44 ){
+				//speakDirection(currentStep);
+			}
+			
+
+
+			//speech
+
+
+			//console.log("rotate("+heading+"deg)");
+
+			//rotateDiv.style.transform = "rotate("+haeding+"deg)";
+			//rotateDiv.style.ms-transform = "rotate("+haeding+"deg)";
+
+
+			//oldPosition = position;
+		}
+
+		function distanceTo(turnNumber, position){
+			var currentPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+			var stepPosition = new google.maps.LatLng(myRoute.steps[turnNumber].start_location.A, myRoute.steps[turnNumber].start_location.F);
+			return google.maps.geometry.spherical.computeDistanceBetween (currentPosition, stepPosition);
+/*
+			var rad = function(x) {
+				return x * Math.PI / 180;
+			};
+
+			var getDistance = function(p1, p2) {
+			  var R = 6378137; // Earth’s mean radius in meter
+			  var dLat = rad(p2.lat() - p1.lat());
+			  var dLong = rad(p2.lng() - p1.lng());
+			  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+			    Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
+			    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+			  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+			  var d = R * c;
+			  return d; // returns the distance in meter
+			};
+*/
+		}
+
+		function setTextDisplay(turnNumber){
+			document.getElementById("textDisplayText").innerHTML = myRoute.steps[turnNumber].instructions;
+			document.getElementById("textDisplayIcon").className = myRoute.steps[turnNumber].maneuver;
+			if (document.getElementById("textDisplayIcon").className == "" ){
+				document.getElementById("textDisplayIcon").className = "straight";
+			}
+			console.log(JSON.stringify(myRoute.steps[turnNumber]));
+
+		}
+
+		function divSetUp(){
+
+			var height = $(window).height(); 
+			var width = $(window).width();
+			var divSize = height;
+			if (height>width)
+				divSize = width;
+			var dpx = divSize+"px";
+			
+			document.getElementById("mirror").style.height=dpx;
+			document.getElementById("mirror").style.width=dpx;
+			//document.getElementById("mirror").style.-webkit-perspective="400px";
+			document.getElementById("mirror").style.perspective=dpx;
+			document.getElementById("map-canvas").style.height=dpx;
+			document.getElementById("map-canvas").style.width=dpx;
+
+
+			document.getElementById("main").style.paddingLeft="0px";
+			document.getElementById("main").style.paddingRight="0px";
+			document.getElementById("main").style.paddingTop="0px";//(width*0.05)+"px";
+
+
+			document.getElementById("textDisplayIconZoomer").style.zoom = ((divSize*0.3)/32)*0.96+"";
+			//padding-top: 10%;
+		}
+
+
+
+		function getParameter(theParameter) { 
+		  var params = window.location.search.substr(1).split('&');
+		 
+		  for (var i = 0; i < params.length; i++) {
+		    var p=params[i].split('=');
+			if (p[0] == theParameter) {
+			  return decodeURIComponent(p[1]);
+			}
+		  }
+		  return false;
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+	</head>
+	<body>
+		<div data-role="page" id="page">
+			<div data-role="main" id="main" class="ui-content">
+				<div id="mirror">
+					<div id="tilt">
+						<div id="rotate">
+							<div id="map-canvas"></div>
+						</div>
+					</div>
+					<div id="textDisplay" >
+						<div id="textDisplayIconZoomer">
+							<div id="textDisplayIcon" class="straight" style="height: 32px; width:32px"></div>
+						</div>
+						<span id="textDisplayText" style="display: table-cell; vertical-align: middle; padding-left:0%; padding-right:1%;">
+							<b>Calculating route</b>
+						</span>
+					</div>
+
+				</div>
+				<div id="debug"></div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+<!--
+
+
+
+
+<html>
+<body>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.watchPosition(showPosition);
+	} else { 
+		x.innerHTML = "Geolocation is not supported by this browser.";}
+	}
+	
+function showPosition(position) {
+	x.innerHTML="Latitude: " + position.coords.latitude + 
+	"<br>Longitude: " + position.coords.longitude+
+	"<br>Heading: " + position.coords.heading +
+	"<br>Speed: " + position.coords.speed+
+	"<br>Accuracy: " + position.coords.accuracy;
+}
+</script>
+
+</body>
+</html>
+
+-->
