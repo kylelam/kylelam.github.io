@@ -146,7 +146,7 @@ b {
 }
 
 #page {
-	background-color: grey;
+	background-color: black;
 
 }
 
@@ -369,7 +369,7 @@ b {
 
 
 			var radius = (Math.abs(boundNE.lat()-boundSW.lat())+Math.abs(boundNE.lng()-boundSW.lng()))/4.0*0.9;
-			heading = (position.coords.heading+heading*4)/5;
+			heading = (position.coords.heading+heading*3)/4;
 
 			var diffLat = Math.cos(heading/180*Math.PI)*radius;
 			var diffLng = Math.sin(heading/180*Math.PI)*radius;
@@ -394,7 +394,7 @@ b {
 			distanceToCurrentStep = distanceTo(currentStep, position);
 			document.getElementById("debug").innerHTML=distanceToCurrentStep;
 
-			if ( distanceToCurrentStep <= 25 ) {
+			if ( distanceToCurrentStep <= 15 ) {
 				touchedCurrentPoint = true;
 				//speakDirection(currentStep);
 			}
@@ -402,7 +402,7 @@ b {
 				currentStep++;
 				touchedCurrentPoint = false;
 				setTextDisplay(currentStep);
-
+				
 				//speakDirection(currentStep);
 			}
 
