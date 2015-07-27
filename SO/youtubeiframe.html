@@ -5,6 +5,7 @@
     <div id="player"></div>
 
     <script>
+    /*
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -44,7 +45,66 @@
       }
       function stopVideo() {
         player.stopVideo();
-      }
+      }*/
+      
+      var player;
+var VIDEO_ID = "EIsauUFIguE";
+
+window.onYouTubeIframeAPIReady = function() {
+    console.log("youtube api ready, loading player");
+
+    player = new YT.Player("playerIframe", {
+        width: "100%",
+        height: "100%",
+        videoId: null,
+        events: {
+            onReady: onPlayerReady,
+            onStateChange: onPlayerStateChange,
+            onPlaybackQualityChange: onPlayerPlaybackQualityChange,
+            onError: onPlayerError
+        },
+        playerVars: {
+            modestbranding: 1,
+            playsinline: 1,
+            fs: 0,
+            showinfo: 0
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    console.log("player is ready: ", event);
+    playVideo();
+}
+
+function onPlayerStateChange(event) {
+    console.log("player state change: ", event);
+}
+
+function onPlayerPlaybackQualityChange(event) {
+    console.log("player playback quality change: ", event);
+}
+
+function onPlayerError(event) {
+    console.log("player error: ", event);
+}
+
+function playVideo() {
+    console.log("playing video: " + VIDEO_ID);
+    player.loadVideoById(VIDEO_ID);
+    player.setPlaybackQuality("medium");
+}
+
+function loadPlayer() {
+    console.log("loading youtube api");
+
+    var tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+loadPlayer();
     </script>
   </body>
 </html>
