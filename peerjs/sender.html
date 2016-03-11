@@ -1,0 +1,12 @@
+<script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+
+<script>
+var peer = new Peer('KylesSenderRandomID', {key: '1re39yjtpc1h5mi'}); 
+// You can pick your own id or omit the id if you want to get a random one from the server.
+
+var conn = peer.connect('KylesReciverRandomID');
+conn.on('open', function(){
+  conn.send('hi!');
+});
+
+</script>
