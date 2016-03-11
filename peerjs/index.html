@@ -1,9 +1,7 @@
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var peerjs = new Peer({key: 'lwjd5qra8257b9'});
-
 var isRemote = window.location.href.indexOf('role=remote')!=-1;
-
 
 if (isRemote){
 	alert("not ready");
@@ -18,10 +16,10 @@ if (isRemote){
 	});
 }
 
-
-
-
-
 </script>
 
-<img src="" id="qrcode"/>
+<div id="main" style="height: 100&; width: 100%; background-color: lightblue;">
+	
+	<img src="" id="qrcode" style="margin-left: auto; margin-right: auto; width: 6em"/>
+	
+</div>
