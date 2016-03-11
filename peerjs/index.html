@@ -6,10 +6,10 @@ var isRemote = window.location.href.indexOf('role=remote')!=-1;
 
 
 if (isRemote){
-	console.log("not ready");
+	alert("not ready");
 } else {
 	//is detail screen
-	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=';
+	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 	var remoteAddress = window.location.href.split('?')[0] + '?role=remote&peerID=';
 	peerjs.on('open', function(id) {
 		console.log('My peer ID is: ' + id);
