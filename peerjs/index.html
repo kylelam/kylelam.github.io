@@ -1,0 +1,27 @@
+<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script>
+var peerjs = new Peer({key: 'lwjd5qra8257b9'});
+
+var isRemote = window.location.href.indexOf('role=remote')!=-1;
+
+
+if (isRemote){
+	console.log("not ready");
+} else {
+	//is detail screen
+	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=';
+	var remoteAddress = window.location.href.split('?')[0] + '?role=remote&peerID=';
+	peerjs.on('open', function(id) {
+		console.log('My peer ID is: ' + id);
+		var qrcodeURL = qrcodeAPI + remoteAddress +id;
+		document.getElementById("qrcode").src=qrcodeURL;
+	});
+}
+
+
+
+
+
+</script>
+
+<img src="" id="qrcode"/>
