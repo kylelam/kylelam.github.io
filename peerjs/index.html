@@ -7,7 +7,7 @@ if (isRemote){
 	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
 	var conn = peerjs.connect(peerID);
 	conn.on('open', function(){
-		conn.send('<h1>hi!</h1>');
+		conn.send('<h1>hi2!</h1>');
 	});
 } else {
 	//is detail screen
