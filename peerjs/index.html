@@ -1,7 +1,7 @@
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var peerjs = new Peer({key: 'lwjd5qra8257b9'});
-var isRemote = window.location.href.indexOf('role=remote')!=-1;
+var isRemote = window.location.href.indexOf('peerID=')!=-1;
 
 if (isRemote){
 	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
@@ -12,7 +12,7 @@ if (isRemote){
 } else {
 	//is detail screen
 	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
-	var remoteAddress = window.location.href.split('?')[0] + '?role=remote&peerID=';
+	var remoteAddress = window.location.href.split('?')[0] + '?peerID=';
 	peerjs.on('open', function(id) {
 		console.log('My peer ID is: ' + id);
 		var qrcodeURL = qrcodeAPI + remoteAddress +id;
