@@ -4,7 +4,11 @@ var peerjs = new Peer({key: 'lwjd5qra8257b9'});
 var isRemote = window.location.href.indexOf('role=remote')!=-1;
 
 if (isRemote){
-	alert("not ready");
+	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
+	var conn = peer.connect(peerID);
+	conn.on('open', function(){
+		conn.send('<h1>hi!</h1>');
+	});
 } else {
 	//is detail screen
 	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
@@ -13,6 +17,12 @@ if (isRemote){
 		console.log('My peer ID is: ' + id);
 		var qrcodeURL = qrcodeAPI + remoteAddress +id;
 		document.getElementById("qrcode").src=qrcodeURL;
+	});
+	
+	peerjs.on('connection', function(conn) {
+		conn.on('data', function(data){
+    			document.getElementById("main").innerHTML=data;
+		});
 	});
 }
 
