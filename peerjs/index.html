@@ -5,7 +5,7 @@ var isRemote = window.location.href.indexOf('peerID=')!=-1;
 
 if (isRemote){
 	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
-	var conn = peer.connect(peerID);
+	var conn = peerjs.connect(peerID);
 	conn.on('open', function(){
 		conn.send('<h1>hi!</h1>');
 	});
