@@ -2,13 +2,18 @@
 <script>
 var peerjs = new Peer({key: 'lwjd5qra8257b9'});
 var isRemote = window.location.href.indexOf('peerID=')!=-1;
+var conn;
 
 if (isRemote){
+	//show connecting animation
 	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
-	var conn = peerjs.connect(peerID);
+	conn = peerjs.connect(peerID);
 	conn.on('open', function(){
+		
 		conn.send('<h1>hi2!</h1>');
+		
 	});
+	
 } else {
 	//is detail screen
 	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
@@ -28,8 +33,7 @@ if (isRemote){
 
 </script>
 
-<div id="main" style="height: 100%; width: 100%; background-color: lightblue;">
+<div id="main" style="height: 100%; width: 100%; background-color: lightblue;" onclick="conn.send('<h1>onclick</h1>');">
 	
 	<img src="" id="qrcode" align="middle"/>
-	
 </div>
