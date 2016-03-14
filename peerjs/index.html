@@ -1,9 +1,65 @@
 <script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
 <script>
 var peerjs = new Peer({key: 'lwjd5qra8257b9'});
-var isRemote = window.location.href.indexOf('peerID=')!=-1;
+var isRemote;// = window.location.href.indexOf('peerID=')!=-1;
 var conn;
 
+function setIsRemote(href){
+	isRemote = href.indexOf('peerID=')!=-1;
+}
+
+function serverStartNewSession(){
+	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
+	var remoteAddress = window.location.href.split('?')[0] + '?peerID=';
+	peerjs.on('open', function(id) {
+		var qrcodeURL = qrcodeAPI + remoteAddress +id;
+		updateControlPage("pairing", 
+			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+'</a>',
+			qrcodeURL);
+	});
+	peerjs.on('connection', function(conn) {
+		updateControlPage("connected", 
+			'Connceted!',
+			"");
+		conn.on('data', function(data){
+			showPage(data);
+		});
+	});
+}
+
+
+
+setIsRemote(window.location.href);
+
+
+//=-=-=-=-=-=-=-=
+
+function updateControlPage(mode, message, imageURL){
+	
+	if (isRemote){
+		//is client
+	} else {
+		//is server
+		switch (mode){
+			case "pairing":
+				document.getElementById("qrcode").src=imageURL;
+				document.getElementById("qrcode_message").innerHTML=message;
+				break;
+			case "connected":
+				document.getElementById("qrcode").src=imageURL;
+				document.getElementById("qrcode_message").innerHTML=message;
+				break;
+				
+		}
+	}
+}
+
+
+function showPage(data){
+	document.getElementById("main").innerHTML=data;
+}
+
+//=-=-=-=-=-=-=-=
 if (isRemote){
 	//show connecting animation
 	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
@@ -36,4 +92,5 @@ if (isRemote){
 <div id="main" style="height: 100%; width: 100%; background-color: lightblue;" onclick="conn.send('<h1>onclick</h1>');">
 	
 	<img src="" id="qrcode" align="middle"/>
+	<p id="qrcode_message"></p>
 </div>
