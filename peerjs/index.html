@@ -30,7 +30,7 @@ function serverStartNewSession(){
 		});
 	});
 	peerjs.on('error', function(err) {
-		updateControlPage("error", err.type, "");
+		updateControlPage("error", err.type, "https://www.google.com/images/errors/robot.png");
 	});
 	peer.on('disconnected', function() {
 		//show menu
