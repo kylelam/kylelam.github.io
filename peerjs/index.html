@@ -15,27 +15,22 @@ function serverStartNewSession(){
 		remoteAddress = remoteAddress + id;
 		var qrcodeURL = qrcodeAPI + remoteAddress;
 		updateControlPage("pairing", 
-			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+'</a>',
+			remoteAddress,
 			qrcodeURL);
 	});
 	peerjs.on('connection', function(conn) {
-		updateControlPage("connected", 
-			'Connceted!',
-			"");
+		updateControlPage("connected", "", "");
 		conn.on('data', function(data){
 			showPage(data);
 		});
 	});
 }
 
-
-
 setIsRemote(window.location.href);
-
 
 //=-=-=-=-=-=-=-=
 
-function updateControlPage(mode, message, imageURL){
+function updateControlPage(mode, remoteUrl, imageURL){
 	
 	if (isRemote){
 		//is client
@@ -44,20 +39,24 @@ function updateControlPage(mode, message, imageURL){
 		switch (mode){
 			case "pairing":
 				document.getElementById("qrcode").src=imageURL;
-				document.getElementById("qrcode_message").innerHTML=message;
+				document.getElementById("qrcode_message").innerHTML=
+					'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteUrl+'">'+remoteUrl+'</a>;
 				break;
 			case "connected":
 				document.getElementById("qrcode").src=imageURL;
-				document.getElementById("qrcode_message").innerHTML=message;
+				document.getElementById("qrcode_message").innerHTML="<h1>Connected!</h1>";
 				break;
 				
 		}
 	}
 }
 
-
 function showPage(data){
-	document.getElementById("main").innerHTML=data;
+	if (isRemote){
+		//call server to show page
+	} else {
+		document.getElementById("main").innerHTML=data;
+	}
 }
 
 //=-=-=-=-=-=-=-=
