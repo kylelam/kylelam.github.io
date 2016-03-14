@@ -24,13 +24,19 @@ function serverStartNewSession(){
 			showPage(data);
 		});
 	});
+	peerjs.on('error', function(err) {
+		updateControlPage("error", err.type, "");
+	});
+	peer.on('disconnected', function() {
+		//updateControlPage("disconnected", "", "");
+	});
 }
 
 setIsRemote(window.location.href);
 
 //=-=-=-=-=-=-=-=
 
-function updateControlPage(mode, remoteUrl, imageURL){
+function updateControlPage(mode, message, imageURL){
 	
 	if (isRemote){
 		//is client
@@ -40,13 +46,16 @@ function updateControlPage(mode, remoteUrl, imageURL){
 			case "pairing":
 				document.getElementById("qrcode").src=imageURL;
 				document.getElementById("qrcode_message").innerHTML=
-					'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteUrl+'">'+remoteUrl+'</a>;
+					'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+message+'">'+message+'</a>;
 				break;
 			case "connected":
 				document.getElementById("qrcode").src=imageURL;
 				document.getElementById("qrcode_message").innerHTML="<h1>Connected!</h1>";
 				break;
-				
+			case "error":
+				document.getElementById("qrcode").src=imageURL;
+				document.getElementById("qrcode_message").innerHTML="<h1>Something when wrong, that is all we know. "+message+"</h1>";
+				break;
 		}
 	}
 }
