@@ -71,6 +71,7 @@ if (isRemote){
 	});
 	
 } else {
+	/*
 	//is detail screen
 	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 	var remoteAddress = window.location.href.split('?')[0] + '?peerID=';
@@ -84,7 +85,9 @@ if (isRemote){
 		conn.on('data', function(data){
     			document.getElementById("main").innerHTML=data;
 		});
-	});
+	});*/
+	
+	serverStartNewSession();
 }
 
 </script>
