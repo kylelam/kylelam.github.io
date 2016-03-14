@@ -12,9 +12,10 @@ function serverStartNewSession(){
 	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
 	var remoteAddress = window.location.href.split('?')[0] + '?peerID=';
 	peerjs.on('open', function(id) {
-		var qrcodeURL = qrcodeAPI + remoteAddress +id;
+		remoteAddress = remoteAddress + id;
+		var qrcodeURL = qrcodeAPI + remoteAddress;
 		updateControlPage("pairing", 
-			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+id+'</a>',
+			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+'</a>',
 			qrcodeURL);
 	});
 	peerjs.on('connection', function(conn) {
