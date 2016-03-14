@@ -14,7 +14,7 @@ function serverStartNewSession(){
 	peerjs.on('open', function(id) {
 		var qrcodeURL = qrcodeAPI + remoteAddress +id;
 		updateControlPage("pairing", 
-			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+'</a>',
+			'Scan the above qrcode,<br>or go to the following link on an Android device.<br><a href="'+remoteAddress+'">'+remoteAddress+id+'</a>',
 			qrcodeURL);
 	});
 	peerjs.on('connection', function(conn) {
