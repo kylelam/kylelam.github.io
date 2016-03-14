@@ -2,7 +2,7 @@
 <script>
 var peerjs = new Peer({key: 'lwjd5qra8257b9'});
 var isRemote;// = window.location.href.indexOf('peerID=')!=-1;
-var conn;
+var conn = null;
 
 function setIsRemote(href){
 	isRemote = href.indexOf('peerID=')!=-1;
@@ -32,10 +32,24 @@ function serverStartNewSession(){
 	peerjs.on('error', function(err) {
 		updateControlPage("error", err.type, "https://www.google.com/images/errors/robot.png");
 	});
-	peer.on('disconnected', function() {
-		//show menu
+	peerjs.on('disconnected', function() {
+		//show navigation menu
 		//updateControlPage("disconnected", "", "");
 	});
+}
+
+function remoteStartNewSession(){
+	//show connecting animation
+	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
+	conn = peerjs.connect(peerID);
+	conn.on('open', function(){
+		updateControlPage("connected", "", "");
+	});
+}
+
+function remoteShowPage(data){
+	if (conn!=null)
+		conn.send(data);
 }
 
 setIsRemote(window.location.href);
@@ -69,6 +83,7 @@ function updateControlPage(mode, message, imageURL){
 function showPage(data){
 	if (isRemote){
 		//call server to show page
+		remoteShowPage(data);
 	} else {
 		document.getElementById("main").innerHTML=data;
 	}
@@ -76,38 +91,14 @@ function showPage(data){
 
 //=-=-=-=-=-=-=-=
 if (isRemote){
-	//show connecting animation
-	var peerID = window.location.href.match(/[&?]peerID=[^&]*/g)[0].split("=")[1]
-	conn = peerjs.connect(peerID);
-	conn.on('open', function(){
-		
-	//	conn.send('<h1>hi2!</h1>');
-		
-	});
-	
+	remoteStartNewSession();
 } else {
-	/*
-	//is detail screen
-	var qrcodeAPI = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=';
-	var remoteAddress = window.location.href.split('?')[0] + '?peerID=';
-	peerjs.on('open', function(id) {
-		console.log('My peer ID is: ' + id);
-		var qrcodeURL = qrcodeAPI + remoteAddress +id;
-		document.getElementById("qrcode").src=qrcodeURL;
-	});
-	
-	peerjs.on('connection', function(conn) {
-		conn.on('data', function(data){
-    			document.getElementById("main").innerHTML=data;
-		});
-	});*/
-	
 	serverStartNewSession();
 }
 
 </script>
 
-<div id="main" style="height: 100%; width: 100%; background-color: lightblue;" onclick="conn.send('<h1>onclick</h1>');">
+<div id="main" style="height: 100%; width: 100%; background-color: lightblue;" onclick="showPage('<h1>onclick</h1>');">
 	
 	<img src="" id="qrcode" align="middle"/>
 	<p id="qrcode_message"></p>
