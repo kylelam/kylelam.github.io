@@ -89,6 +89,15 @@ function showPage(data){
 	}
 }
 
+function getMenuList(){
+	var list = ["index", "detail", "about"];
+	if (isRemote){
+		list.push("disconnect");
+	}
+	return list;
+}
+
+
 //=-=-=-=-=-=-=-=
 if (isRemote){
 	remoteStartNewSession();
