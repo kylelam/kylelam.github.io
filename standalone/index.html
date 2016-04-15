@@ -5,7 +5,16 @@
 <script>
 if (window.navigator.standalone){
   window.location = "comgooglemaps://?daddr=Microsoft+Building+36+redmond";
+}else{
+  document.getElementById("demo").innerHTML = window.location;
+}
+
+function setExtra(){
+  window.location+='?comgooglemaps://?daddr=Microsoft+Building+36+redmond';
+  
 }
 </script>
 
-isRunningStandalone
+<p id="title">isRunningStandalone</p>
+
+<button onclick="setExtra()">Click me</button> 
