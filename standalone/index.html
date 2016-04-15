@@ -4,17 +4,19 @@
 
 <p id="title">isRunningStandalone</p>
 
-<button onclick="setExtra()">Click me</button> 
+<button onclick="setExtra('?comgooglemaps://?daddr=Microsoft+Building+36+redmond')">Click me</button> 
 
 <script>
 if (window.navigator.standalone){
-  window.location = "comgooglemaps://?daddr=Microsoft+Building+36+redmond";
+  var str = window.location.href;
+  window.location = str.substr(str.indexOf('?')+1);
 }else{
   document.getElementById("title").innerHTML = window.location.href;
 }
 
-function setExtra(){
-  window.location=window.location.href+'?comgooglemaps://?daddr=Microsoft+Building+36+redmond';
+function setExtra(extra){
+  var str = window.location.href;
+  window.location = str.substr(0, str.indexOf('?')) + extra;
   
 }
 </script>
