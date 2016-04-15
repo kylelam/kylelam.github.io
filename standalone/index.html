@@ -2,6 +2,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
+<p id="title">isRunningStandalone</p>
+
+<button onclick="setExtra()">Click me</button> 
+
 <script>
 if (window.navigator.standalone){
   window.location = "comgooglemaps://?daddr=Microsoft+Building+36+redmond";
@@ -14,7 +18,3 @@ function setExtra(){
   
 }
 </script>
-
-<p id="title">isRunningStandalone</p>
-
-<button onclick="setExtra()">Click me</button> 
