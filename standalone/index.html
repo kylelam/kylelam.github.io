@@ -1,16 +1,38 @@
+<html>
 <head>
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Standalone Deep Linking</title>
 </head>
-
-<p id="title">isRunningStandalone</p>
-
-<button onclick="setExtra('?comgooglemaps://?daddr=Microsoft+Building+36+redmond')">Click me</button> 
+<body>
+<h1 id="title"></h1>
+<input id="URIform" type="text" style="width:100%, height:30%" hidden/>
+<button id="generateButton" onclick="setExtra()" style="width:100%" hidden>Generate SDL</button> 
 
 <script>
 if (window.navigator.standalone){
   var str = window.location.href;
-  window.location = str.substr(str.indexOf('?')+1);
+  var indexOfUri = str.indexOf('?');
+  if (indexOfUri>0){
+    // launch uri
+    var uri = str.substr(indexOfUri+1);
+    document.getElementById("title").innerHTML = "launching " + uri;
+    window.location = uri;
+  } else {
+    document.getElementById("title").innerHTML = "error, please delete this SDL and re-add it again."
+  }
 }else{
+  var str = window.location.href;
+  var indexOfUri = str.indexOf('?');
+  if (indexOfUri>0){
+    document.getElementById("title").innerHTML = "click the share icon and add this SDL to home screen."
+  } else {
+    //show control
+    document.getElementById("URIform").removeAttribute("hidden"); 
+    document.getElementById("generateButton").removeAttribute("hidden"); 
+    
+  }
+  
   document.getElementById("title").innerHTML = window.location.href;
 }
 
@@ -20,3 +42,6 @@ function setExtra(extra){
   
 }
 </script>
+
+</body>
+</html>
