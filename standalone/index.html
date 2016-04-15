@@ -3,16 +3,9 @@
 </head>
 
 <script>
-function isRunningStandalone() {
-  return (window.matchMedia('(display-mode: standalone)').matches);
+if (window.navigator.standalone){
+  window.location = "comgooglemaps://?daddr=Microsoft+Building+36+redmond";
 }
-
-if (isRunningStandalone()) {
-  /* This code will be executed if app is running standalone */
-  alert("isRunningStandalone");
-}
-
-alert(window.navigator.standalone);
 </script>
 
 isRunningStandalone
