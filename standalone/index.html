@@ -6,11 +6,11 @@
 if (window.navigator.standalone){
   window.location = "comgooglemaps://?daddr=Microsoft+Building+36+redmond";
 }else{
-  document.getElementById("title").innerHTML = window.location;
+  document.getElementById("title").innerHTML = window.location.href;
 }
 
 function setExtra(){
-  window.location+='?comgooglemaps://?daddr=Microsoft+Building+36+redmond';
+  window.location=window.location.href'?comgooglemaps://?daddr=Microsoft+Building+36+redmond';
   
 }
 </script>
