@@ -43,7 +43,7 @@ function setExtra(){
   }
   extra = document.getElementById('URIform').value;
   if (extra.indexOf(':')>0){
-    window.location = str + extra;
+    window.location = str + "?" + extra;
   }else{
     alert("error, please enter a deeplink");
   }
