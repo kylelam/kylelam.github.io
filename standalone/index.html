@@ -5,8 +5,8 @@
   <title>Standalone Deep Linking</title>
 </head>
 <body>
-<h1 id="title" style="width:100%; word-wrap: break-word;"></h1>
-<input id="URIform" type="text" style="width:100%; height:30%" hidden/>
+<div id="title" style="width:100%; word-wrap: break-word;"></div>
+<input id="URIform" type="text" style="width:100%" hidden value="comgooglemaps://?daddr=Microsoft+Building+36+Redmond+WA"/>
 <button id="generateButton" onclick="setExtra()" style="width:100%" hidden>Generate SDL</button> 
 
 <script>
@@ -18,29 +18,34 @@ if (window.navigator.standalone){
     var uri = str.substr(indexOfUri+1);
     document.getElementById("title").innerHTML = "launching " + uri;
     window.location = uri;
-  } else {
-    document.getElementById("title").innerHTML = "error, please delete this SDL and re-add it again."
-  }
+    
+  } 
+  document.getElementById("title").innerHTML = "<h1>error</h1> please delete this SDL and re-add it again.";
 }else{
   var str = window.location.href;
   var indexOfUri = str.indexOf('?');
   if (indexOfUri>0){
-    document.getElementById("title").innerHTML = "click the share icon and add this SDL to home screen."
+    document.getElementById("title").innerHTML = "<h1>success</h1> click the share icon and add this SDL to home screen.";
   } else {
     //show control
     document.getElementById("URIform").removeAttribute("hidden"); 
     document.getElementById("generateButton").removeAttribute("hidden"); 
     
+    document.getElementById("title").innerHTML = "<h1>standalone deep linking</h1> enter a deep link below and generate an icon you can launch from home screen.";
   }
   
-  document.getElementById("title").innerHTML = window.location.href;
 }
 
-function setExtra(extra){
+function setExtra(){
   var str = window.location.href;
-  window.location = str.substr(0, str.indexOf('?')) + extra;
-  
+  extra = document.getElementById('URIform').value;
+  if (extra.indexOf(':')>0){
+    window.location = str.substr(0, str.indexOf('?')) + extra;
+  }else{
+    alert("error, please enter a deeplink");
+  }
 }
+
 </script>
 
 </body>
