@@ -38,9 +38,12 @@ if (window.navigator.standalone){
 
 function setExtra(){
   var str = window.location.href;
+  if (str.indexOf('?')>0){
+    str.substr(0, str.indexOf('?'));
+  }
   extra = document.getElementById('URIform').value;
   if (extra.indexOf(':')>0){
-    window.location = str.substr(0, str.indexOf('?')) + extra;
+    window.location = str + extra;
   }else{
     alert("error, please enter a deeplink");
   }
