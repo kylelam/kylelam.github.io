@@ -1,7 +1,231 @@
+<!DOCTYPE html>
 <html>
+<head>
+<title>Kyle Lam</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<style>
+body {
+	background-color: #000000;
+}
 
+.body {
+	    padding-left: 20%;
+	    padding-right: 20%;
+	    padding-top: 5%;
+	    padding-bottom: 5%;
+}
+
+#about {
+	color: #ffffff;
+	background-color: #999999;
+}
+#ubutton {
+	color: #ffffff;
+	background-color: #666666;
+}
+#sunshine {
+	color: #ffffff;
+	background-color: #333333;
+}
+#hudnav {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+#button {
+    position: absolute;
+	vertical-align : bottom;
+	margin-right: 10px;
+}
+
+img {
+	width: 6vw;
+	height: auto;
+	margin-right: 1.5vw;
+}
+
+.rotate {
+    -ms-transform: rotate(270deg); /* IE 9 */
+    -webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+    transform: rotate(270deg);
+}
+
+.button-container {
+	padding-left: 5%;
+}
+
+</style>
+</head>
 <body>
-<p> hello world </p>
-</body>
 
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title"><!-- TBD --></span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation. We hide it in small screens. -->
+			<nav class="mdl-navigation mdl-layout--large-screen-only">
+				<a class="mdl-navigation__link" href="#about">about Kyle</a>
+				<a class="mdl-navigation__link" href="#ubutton">uButton</a>
+				<a class="mdl-navigation__link" href="#sunshine">Sunshine</a>
+				<a class="mdl-navigation__link" href="#hudnav">HUDNav</a>
+			</nav>
+		</div>
+	</header>
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">Title</span>
+		<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="#about">about Kyle</a>
+				<a class="mdl-navigation__link" href="#ubutton">uButton</a>
+				<a class="mdl-navigation__link" href="#sunshine">sunshine</a>
+				<a class="mdl-navigation__link" href="#hudnav">HUDNav</a>
+		</nav>
+	</div>
+	<main class="mdl-layout__content">
+		<div class="page-content"><!-- Your content goes here -->
+		<div id="about" class="body">
+			<h4>about Kyle Lam</h4>
+			<p>B.S. in Computer Science, minor in Japanese, University of California Davis, Davis, CA</p>
+			<p>Currently located in Kirkland, Washington</p>
+			<table>
+				<tr><h6>History of Kyle Lam</h6></tr>
+				<tr>
+					<td>
+						<p class="rotate">current</p>
+					</td>
+					<td>
+						<img src="https://developer.microsoft.com/en-us/assets/microsoft-header.png"/>
+					</td>
+					<td>
+						<p>Software Engineer<br>
+							Microsoft<br>
+							Redmond WA<br>
+							Keywords: C++, Office Excel, Excel Mobile</p>
+					</td>
+					<td class="button-container">
+						<!-- Colored mini FAB button -->
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="button">
+							<i class="material-icons">more_horiz</i>
+						</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p class="rotate">2015</p>
+					</td>
+					<td>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"/>
+					</td>
+					<td>
+						<p>Developer Support Specialist<br>
+							BCforward at Google<br>
+							Mountain View, CA<br>
+							Keywords: Java, Javascript, Android, Google Maps, Japanese</p>
+					</td>
+					<td class="button-container">
+						<!-- Colored mini FAB button -->
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="button">
+							<i class="material-icons">more_horiz</i>
+						</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p class="rotate">2014</p>
+					</td>
+					<td>
+						<img src="http://assets.reviews.com/uploads/2015/09/25001427/glassdoor_logo_500.png"/>
+					</td>
+					<td>
+						<p>Junior HTML/XML Developer<br>
+							Glassdoor<br>
+							Mill Valley, CA<br>
+							Keywords: XPathes, regular expressions, JavaScript 
+					</td>
+					<td class="button-container">
+						<!-- Colored mini FAB button -->
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="button">
+							<i class="material-icons">more_horiz</i>
+						</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p class="rotate">2013</p>
+					</td>
+					<td>
+						<!-- no img -->
+					</td>
+					<td>
+						<p>Software Developer<br>
+							i-Study Center<br>
+							Macau, SAR<br>
+							Keywords: jQuery mobile, JavaScript, Google App Engine, Python</p>
+					</td>
+					<td class="button-container">
+						<!-- Colored mini FAB button -->
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="button">
+							<i class="material-icons">more_horiz</i>
+						</button>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p class="rotate">2013</p>
+					</td>
+					<td>
+						<img src="http://ahmct.ucdavis.edu/wp-content/uploads/images/footer_logo.png"/>
+					</td>
+					<td>
+						<p>Software Programmer<br>
+							AHMCT<br>
+							Davis, CA<br>
+							Keywords: C++, open soruce project</p>
+					</td>
+					<td class="button-container">
+						<!-- Colored mini FAB button -->
+						<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" id="button">
+							<i class="material-icons">more_horiz</i>
+						</button>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		<div id="ubutton" class="body">
+			<h4>uButton</h4>
+			<p>
+			</p>
+		</div>
+		<div id="sunshine" class="body">
+			<h4>sunshine</h4>
+			<p>
+			</p>
+		</div>
+		<div id="hudnav" class="body">
+			<h4>HudNav</h4>
+			<p>
+			</p>
+		</div>
+	</div>
+	</main>
+</div>
+
+
+</body>
 </html>
