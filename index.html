@@ -47,7 +47,7 @@ table {
 	margin-right: 10px;
 }
 
-img {
+.icon {
 	width: 6vw;
 	height: auto;
 	margin-right: 1.5vw;
@@ -61,6 +61,7 @@ img {
 
 .button-container {
 	padding-left: 5%;
+	display: none;
 }
 
 .video {
@@ -90,7 +91,7 @@ img {
 		</div>
 	</header>
 	<div class="mdl-layout__drawer">
-		<span class="mdl-layout-title">Title</span>
+		<span class="mdl-layout-title">Menu</span>
 		<nav class="mdl-navigation">
 				<a class="mdl-navigation__link" href="#about">about Kyle</a>
 				<a class="mdl-navigation__link" href="#ubutton">uButton</a>
@@ -111,7 +112,7 @@ img {
 						<p class="rotate">current</p>
 					</td>
 					<td>
-						<img src="https://developer.microsoft.com/en-us/assets/microsoft-header.png"/>
+						<img src="https://developer.microsoft.com/en-us/assets/microsoft-header.png" class="icon"/>
 					</td>
 					<td>
 						<p>Software Engineer<br>
@@ -132,7 +133,7 @@ img {
 						<p class="rotate">2015</p>
 					</td>
 					<td>
-						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"/>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png" class="icon"/>
 					</td>
 					<td>
 						<p>Developer Support Specialist<br>
@@ -153,7 +154,7 @@ img {
 						<p class="rotate">2014</p>
 					</td>
 					<td>
-						<img src="http://assets.reviews.com/uploads/2015/09/25001427/glassdoor_logo_500.png"/>
+						<img src="http://assets.reviews.com/uploads/2015/09/25001427/glassdoor_logo_500.png" class="icon"/>
 					</td>
 					<td>
 						<p>Junior HTML/XML Developer<br>
@@ -195,7 +196,7 @@ img {
 						<p class="rotate">2013</p>
 					</td>
 					<td>
-						<img src="http://ahmct.ucdavis.edu/wp-content/uploads/images/footer_logo.png"/>
+						<img src="http://ahmct.ucdavis.edu/wp-content/uploads/images/footer_logo.png" class="icon"/>
 					</td>
 					<td>
 						<p>Software Programmer<br>
@@ -215,20 +216,25 @@ img {
 		</div>
 		<div id="ubutton" class="body">
 			<h4>Hackathon project uButton</h4>
-			<p><b>ubutton</b> provides easy to deploy solutions for businesses to implement Uber on their website. Used Google Maps API, Uber API and other HTML5 functions to give a seamless yet easy to use experience. This project is one of the winning entries of <a href="http://uberhackathon.devpost.com/submissions/37536-ubutton">Uber Hackathon</a>, and it was displayed under the Uber for Developers page as a showcase.
-			</p>
+			<p>For developers, one of the many challenges on using external APIs is their complicated set up. Most of the time, these set up, and requirenment are not necessary for the single simple function developers wanted to use. This project is attempted to slove this problem.</p>
+			<p><b>ubutton</b> provides easy to deploy solutions for businesses to implement Uber on their website. Used Google Maps API, Uber API and other HTML5 functions to give a seamless yet easy to use experience. This project is one of the winning entries of <a href="http://uberhackathon.devpost.com/submissions/37536-ubutton">Uber Hackathon</a>, and it was displayed under the Uber for Developers page as a showcase.</p>
 			<iframe src="https://www.youtube.com/embed/Cia8MK9oXM0" frameborder="0" allowfullscreen class="video"></iframe>
 			<p>Made with jQuery, node.js, and JavaScript</p>
 		</div>
 		<div id="sunshine" class="body">
-			<h4>sunshine</h4>
-			<p>
+			<h4>sunshine Js</h4>
+			<p>Sunshine was an <a href="https://play.google.com/store/apps/details?id=com.soagrowers.android.sunshine.app">Android project</a> for uDacity Android class, and here I tried to redo it in plain JavaScript. This version of the sunshine Js took use of the local storage for setting, and weather data storage.
 			</p>
+			<p>Demo of the sunshine Js can be found <a href="http://kylelam.github.io/sunshine/">here</a>.</p>
+			<iframe src="http://kylelam.github.io/sunshine/" class="video"></iframe>
 		</div>
 		<div id="hudnav" class="body">
 			<h4>HudNav</h4>
-			<p>
-			</p>
+			<p>In many case, drivers need to see both at the same time.</p>
+			<img src="https://s11.postimg.org/6wzqasufn/Hud_Nav.jpg" class="video"/>
+			
+			<p>Head up turn-by-turn car navigation app HudNav, uses windshield reflection of the phone screen provides a Head‐Up-Display navigation experience. Used Google Maps API, with custom logics to give turn-by-turn instructions.</p>
+			<iframe src="https://www.youtube.com/embed/kZldHDs4KYk" frameborder="0" allowfullscreen class="video"></iframe>
 		</div>
 	</div>
 	</main>
