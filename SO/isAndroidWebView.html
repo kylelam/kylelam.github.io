@@ -1,10 +1,16 @@
 <script>
 
-if (typeof webViewControl !== "undefined")
-{
-  //alert("webview");
-  webViewControl.dismissWebView();
-}
-else
-  alert("not webview");
+  function exitOrDie(){
+    if (typeof webViewControl !== "undefined")
+    {
+      //alert("webview");
+      webViewControl.dismissWebView();
+    }
+    else
+      alert("not webview");
+  }
+  
+  
 </script>
+
+<button onClick="exitOrDie()">button</button>
