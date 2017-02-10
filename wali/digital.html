@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!--
+
+-->
+<style>
+h1 {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); 
+}
+</style>
+
+</head>
+<body>
+	<div id="control" style="">
+		<button class="center" style="background-color: lightblue; height: 33%; width:100%"><h1 id="text">1</h1></button>
+		<button id="addBtn" class="center" style="background-color: lightgreen; height: 33%; width:100%"><h1>+</h1></button>
+		<button id="subBtn" class="center" style="background-color: pink; height: 33%; width:100%"><h1>-</h1></button>
+	</div>
+	<div id="view" style="display: none;">
+		<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=1"></img>
+	</div>
+</body>
+
+<script>
+function disableZoom(){
+	document.documentElement.addEventListener('touchstart', function (event) {
+	  if (event.touches.length > 1) {
+	    event.preventDefault();
+	  }
+	}, false);
+}
+disableZoom();
+
+
+var stampCount=1;
+
+function updateValue(value){
+	document.getElementById("text").innerHTML = value;
+}
+
+function addValue(){
+	stampCount++;
+	updateValue(stampCount);
+}
+
+function subValue(){
+	if (stampCount > 1)
+		stampCount--;
+	updateValue(stampCount);
+}
+
+//iphone has 300ms delay on click
+document.getElementById("addBtn").addEventListener('touchend', function(e){
+        addValue();
+    }, false)
+document.getElementById("subBtn").addEventListener('touchend', function(e){
+        subValue();
+    }, false)
+
+
+
+
+function displayControl(){
+	document.getElementById("control").style.display=""
+	document.getElementById("view").style.display="none"
+}
+
+function displayView(){
+	document.getElementById("control").style.display="none"
+	document.getElementById("view").style.display=""
+}
+
+function doOnOrientationChange()
+  {
+    switch(window.orientation) 
+	{
+		case 0:
+			displayControl();
+			break;
+		case -90:
+    	case 90:
+    	case 180:
+    		//alert(window.orientation);
+    		displayView();
+    		break;
+		default:
+			displayControl();
+    		break;
+	}
+	//document.getElementById("text").innerHTML = window.orientation;
+}
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+// Initial execution if needed
+doOnOrientationChange();	
+
+//displayView();
+</script>
+
+</html>
