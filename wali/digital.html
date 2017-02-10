@@ -21,11 +21,11 @@ h1 {
 </head>
 <body>
 	<div id="control" style="">
-		<button class="center" style="background-color: lightblue; height: 33%; width:100%"><h1 id="text">1</h1></button>
+		<button class="center" style="background-color: lightblue; height: 33%; width:100%" onclick="displaySwitch()"><h1 id="text">1</h1></button>
 		<button id="addBtn" class="center" style="background-color: lightgreen; height: 33%; width:100%"><h1>+</h1></button>
 		<button id="subBtn" class="center" style="background-color: pink; height: 33%; width:100%"><h1>-</h1></button>
 	</div>
-	<div id="view" style="display: none;">
+	<div id="view" style="display: none;" onclick="displaySwitch()">
 		<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=1"></img>
 	</div>
 </body>
@@ -67,6 +67,13 @@ document.getElementById("subBtn").addEventListener('touchend', function(e){
     }, false)
 
 
+
+function displaySwitch(){
+	if (document.getElementById("control").style.display=="")
+		displayControl();
+	else
+		displayView();
+}
 
 
 function displayControl(){
