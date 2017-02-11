@@ -1,4 +1,6 @@
 <html>
+    
+<div id='text'></div>
 <script>
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.open('GET', '//gatewayapi-devo.mywali.co/v1/menus?bid=123', true);
@@ -6,7 +8,7 @@ xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4) {
         if(xmlhttp.status == 200) {
             var obj = JSON.parse(xmlhttp.responseText);
-            document.getElementById('text').innerHTML=xmlhttp.responseText;
+            document.getElementById("text").innerHTML=xmlhttp.responseText;
             var countryList = obj.countrylist;
          }
     }
@@ -14,6 +16,5 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.send(null);
 </script>
 
-<div id='text'></div>
 
 </html>
