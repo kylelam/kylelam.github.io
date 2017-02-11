@@ -8,7 +8,8 @@ xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4) {
         if(xmlhttp.status == 200) {
             var obj = JSON.parse(xmlhttp.responseText);
-            document.getElenmentById("text").innerHTML=xmlhttp.responseText;
+            
+            document.getElementById("text").innerHTML=JSON.stringify(obj);
             var countryList = obj.countrylist;
          }
     }
