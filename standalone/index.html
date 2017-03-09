@@ -14,7 +14,7 @@ function isRunningStandalone() {
     return (window.matchMedia('(display-mode: standalone)').matches);
 }
   
-if ((window.navigator.standalone)||(isRunningStandalone())){
+if ((window.navigator.standalone) || (isRunningStandalone()) || (screen.height-document.documentElement.clientHeight<40)){
   var str = window.location.href;
   var indexOfUri = str.indexOf('?');
   if (indexOfUri>0){
