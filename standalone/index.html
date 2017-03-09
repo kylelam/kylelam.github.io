@@ -10,7 +10,11 @@
 <button id="generateButton" onclick="setExtra()" style="width:100%" hidden>Generate SDL</button> 
 
 <script>
-if (window.navigator.standalone){
+function isRunningStandalone() {
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
+  
+if ((window.navigator.standalone)||(isRunningStandalone())){
   var str = window.location.href;
   var indexOfUri = str.indexOf('?');
   if (indexOfUri>0){
