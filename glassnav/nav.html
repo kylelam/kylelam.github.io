@@ -198,6 +198,7 @@ b {
 		var myRoute = null;
 		var touchedCurrentPoint = false;
 		var currentStep = 0;
+		var audio;
 		//var oldPosition;
 
 		function mapInitialize(position) {
@@ -398,7 +399,7 @@ b {
 				touchedCurrentPoint = true;
 				//speakDirection(currentStep);
 			}
-			if ( touchedCurrentPoint && distanceToCurrentStep > 25 ){
+			if ( touchedCurrentPoint && distanceToCurrentStep > 15 ){
 				currentStep++;
 				touchedCurrentPoint = false;
 				setTextDisplay(currentStep);
@@ -450,6 +451,8 @@ b {
 
 		function setTextDisplay(turnNumber){
 			document.getElementById("textDisplayText").innerHTML = myRoute.steps[turnNumber].instructions;
+
+			googleTranslateTTS(document.getElementById("textDisplayText").innerHTML);
 			document.getElementById("textDisplayIcon").className = myRoute.steps[turnNumber].maneuver;
 			if (document.getElementById("textDisplayIcon").className == "" ){
 				document.getElementById("textDisplayIcon").className = "straight";
@@ -496,6 +499,19 @@ b {
 			}
 		  }
 		  return false;
+		}
+
+
+
+		function googleTranslateTTS(text){
+			var su = new SpeechSynthesisUtterance();
+			su.lang = "en";
+			su.text = text.replace(/<[^>]*>/g,"");
+			speechSynthesis.speak(su);
+			//audio = new Audio();
+			//audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=en&q='+text.replace(/<[^>]*>/g,"").replace(" ", "+").replace(".", "+").replace(",", "+");
+			//audio.play();
+			//return audio;
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);

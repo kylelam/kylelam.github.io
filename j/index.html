@@ -1,0 +1,604 @@
+<!--
+hey, sorry, just trying to modify the existing code to make a fun postcard, let me know if you want me to remove it or so.
+-->
+
+<!--
+Copyright 2017 Google Inc. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Event">
+<head>
+<meta charset="utf-8">
+<meta content="IE=Edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<link rel="manifest" href="https://events.google.com/io/manifest.json">
+<meta name="theme-color" content="#6284F3">
+
+<link rel="shortcut icon" href="/io/static/images/favicon/favicon-72.png">
+  <title>Google I/O 2017</title>
+
+<meta itemprop="name" content="Google I/O 2017">
+<meta itemprop="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+<meta itemprop="startDate" content="2017-05-17">
+<meta itemprop="endDate" content="2017-05-19">
+<meta itemprop="url" content="https://events.google.com/io/">
+<meta itemprop="location" content="Shoreline Amphitheatre Mountain View, California">
+
+<meta property="og:url" content="https://events.google.com/io/">
+<meta property="og:type" content="Event">
+<meta property="og:image" content="https://storage.googleapis.com/io2017/v1/common/io17-social-1200x630-indigo.png">
+<meta property="og:title" content="Google I/O 2017">
+<meta property="og:site_name" content="Google I/O 2017">
+<meta name="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+<meta property="og:description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Product+Sans:400,500&lang=en" rel="stylesheet">
+<link rel="stylesheet" href="https://events.google.com/io/static/css/main-045a1564ba42a06fa60a32cb633518e0.min.css">
+  <link rel="stylesheet" href="https://events.google.com/io/static/css/home-6df632b97a5d2a635243d9684b10c23c.min.css">
+<meta name="google-site-verification" content="j-mH2xoHnxrJhQIEUgIH7V8b23Z4TUC1eIYOPx0QTC8" />
+</head>
+<body id="top" data-ping-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/ping/v1/rest" data-userdata-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/userdata/v1/rest" data-registration-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/registration/v1/rest" data-firebase-project="gweb-io2017" data-firebase-api="AIzaSyD-_B5QWEie62J0hNe2sth-Gm1ezMwWlpw" data-firebase-sender="755839215930" data-sessions="https://storage.googleapis.com/io2017-festivus/">
+
+<header class="header " data-scroll-header>
+  <div class="header__content">
+    <div class="header__hamburger" aria-label="menu" role=button tabindex="0">
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>    </div>
+    <div class="header__logo header__logo--google header__logo--hide-on-scroll">
+      <a href="index.html" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="home">
+<!--<svg width="158" height="52" viewBox="0 -1 158 52" xmlns="http://www.w3.org/2000/svg"><path d="M60.767 26.69c0-4.56-3.312-7.681-7.152-7.681-3.84 0-7.153 3.12-7.153 7.68 0 4.514 3.313 7.682 7.153 7.682 3.84 0 7.152-3.168 7.152-7.681zm5.569 0c0 7.297-5.713 12.673-12.721 12.673-7.01 0-12.721-5.376-12.721-12.673 0-7.344 5.712-12.673 12.72-12.673 7.009 0 12.722 5.329 12.722 12.673zm22.431 0c0-4.56-3.312-7.681-7.152-7.681-3.84 0-7.153 3.12-7.153 7.68 0 4.514 3.313 7.682 7.153 7.682 3.84 0 7.152-3.168 7.152-7.681m5.569 0c0 7.297-5.713 12.673-12.721 12.673-7.01 0-12.721-5.376-12.721-12.673 0-7.344 5.712-12.673 12.72-12.673 7.009 0 12.722 5.329 12.722 12.673m21.933.048c0-4.464-2.977-7.729-6.77-7.729-3.838 0-7.055 3.265-7.055 7.73 0 4.416 3.216 7.631 7.055 7.631 3.794 0 6.77-3.215 6.77-7.632zm4.895-11.953V37.54c0 9.361-5.52 13.201-12.047 13.201-6.145 0-9.842-4.128-11.234-7.489l4.849-2.016c.864 2.065 2.975 4.513 6.385 4.513 4.175 0 6.767-2.593 6.767-7.44v-1.825h-.19c-1.25 1.536-3.65 2.88-6.674 2.88-6.337 0-12.145-5.52-12.145-12.625 0-7.153 5.808-12.72 12.145-12.72 3.025 0 5.425 1.343 6.674 2.831h.19v-2.064h5.28zm4.451 23.81h5.5v-37h-5.5zm13.926-12.289l11.33-4.705c-.625-1.584-2.497-2.688-4.705-2.688-2.832 0-6.769 2.497-6.625 7.393m13.298 4.561l4.32 2.88c-1.392 2.064-4.753 5.616-10.56 5.616-7.202 0-12.579-5.568-12.579-12.673 0-7.537 5.425-12.673 11.954-12.673 6.577 0 9.793 5.232 10.848 8.064l.576 1.441-16.945 7.01c1.296 2.543 3.313 3.838 6.145 3.838 2.832 0 4.8-1.392 6.241-3.503M38.087 17.836a21.92 21.92 0 0 1 .268 3.43c0 4.032-1.104 9.025-4.657 12.577-3.456 3.6-7.872 5.52-13.729 5.52C9.12 39.364 0 30.532 0 19.683 0 8.832 9.12 0 19.97 0c6 0 10.272 2.352 13.49 5.425l-3.794 3.792c-2.304-2.16-5.424-3.84-9.697-3.84-7.92 0-14.113 6.384-14.113 14.305 0 7.92 6.193 14.305 14.113 14.305 5.136 0 8.065-2.064 9.937-3.936 1.536-1.537 2.574-3.815 2.96-6.84H19.968v-5.375h18.118z" fill-rule="evenodd"/></svg>     --><h1 style="padding:5%"><b>Kyyle I/O</b></h1> </a>
+    </div>
+    <nav class="header__nav header__nav--desktop" role="navigation">
+          <div class="header__nav__item ">
+            <a href="https://goo.gl/photos/puuNvzDrDFiRCo399" target="_blank" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="i-o-17-recap">I/O '17 Recap</a>
+          </div>
+          <div class="header__nav__item ">
+            <a href="https://docs.google.com/document/d/1tXyfavq4DYDogVMqZou17OjCRvh5Dp-Y9fTOu58iGtk/edit?usp=sharing" target="_blank"  data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="sessions">Holiday</a>
+          </div>
+
+          <div class="header__nav__item ">
+            <a href="https://www.google.com/flights/#search;f=SFO,OAK,SJC;t=SEA;d=2017-09-01;r=2017-09-05" target="_blank" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="extended">Get Ticket</a>
+          </div>
+          <div class="header__nav__item">
+            <a target="_blank" href="mailto:kylelam@me.com?subject=About%20Kyyles%20IO" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="codelabs">Contact Kyyle</a>
+          </div>
+
+      <div class="header__notifications">
+        <div class="header__notifications__icon" aria-label="notifications" role="button" tabindex="0"><svg width="16" height="20" viewBox="0 0 16 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 20c1.1 0 2-.9 2-2H6a2 2 0 0 0 2 2zm6-6V9c0-3.07-1.64-5.64-4.5-6.32V2C9.5 1.17 8.83.5 8 .5S6.5 1.17 6.5 2v.68C3.63 3.36 2 5.92 2 9v5l-2 2v1h16v-1l-2-2z" fill="#536DFE"/></svg></div>
+        <div class="header__notifications__popup">
+          <div class="header__notifications__popup__loader" data-notifications-loading-any>
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path opacity=".2" d="M20.201 5.169c-8.254 0-14.946 6.692-14.946 14.946 0 8.255 6.692 14.946 14.946 14.946s14.946-6.691 14.946-14.946c-.001-8.254-6.692-14.946-14.946-14.946zm0 26.58c-6.425 0-11.634-5.208-11.634-11.634 0-6.425 5.209-11.634 11.634-11.634 6.425 0 11.633 5.209 11.633 11.634 0 6.426-5.208 11.634-11.633 11.634z"/><path d="M26.013 10.047l1.654-2.866a14.855 14.855 0 0 0-7.466-2.012v3.312c2.119 0 4.1.576 5.812 1.566z"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur=".5s" repeatCount="indefinite"/></path></svg>          </div>
+          <div class="header__notifications__popup__title">I/O Notifications</div>
+          <div class="header__notifications__popup__body">Choose which content you would like to receive in-browser notifications for:</div>
+          <div class="header__notifications__popup__topics">
+            <div>
+              <div class="header__notifications__popup__topics__topic">
+                <label>
+                  <input type="checkbox" value="schedule" data-notifications-checkbox> <span>Schedule</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="header__notifications__popup__topics__topic">
+                <label>
+                  <input type="checkbox" value="attending" data-notifications-checkbox> <span>Attending I/O</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="header__notifications__popup__topics__topic">
+                <label>
+                  <input type="checkbox" value="extended" data-notifications-checkbox> <span>I/O Extended</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="header__notifications__popup__topics__topic">
+                <label>
+                  <input type="checkbox" value="registration" data-notifications-checkbox> <span>Registration</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__notifications__mask"></div>
+      </div>
+    </nav>
+
+    <div class="header__signin" style="display: none">
+      <a class="header__signin__out" data-g-event-category="header:nav">Sign In</a>
+      <a class="header__signin__in" data-g-event-category="header:nav" >Sign Out</a>
+    </div>
+  </div>
+</header>
+<div class="header__nav header__nav--mobile">
+  <div class="header__nav__content">
+    <div class="header__nav__details">
+      <div class="header__nav__logo">
+        <a href="index.html" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="home">
+<svg width="188" height="133" viewBox="0 0 188 133" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#5471F9" d="M0 111.963h47.71V17.9H0z"/><path fill="#31E8B7" d="M82.85 0L53.308 131.147l7.42 1.642L90.273 1.642z"/><path d="M136.648 14c-28.3 0-51.242 22.745-51.242 50.8 0 28.057 22.942 50.8 51.242 50.8 28.301 0 51.242-22.743 51.242-50.8 0-28.055-22.94-50.8-51.242-50.8" fill="#5471F9"/></g></svg>        </a>
+      </div>
+      <h2 role="presentation">Jan1-Dec31, 2017-2099</h2>
+      <h3 role="presentation">Kirkland You Know Where, WA</h3>
+    </div>
+    <nav class="header__nav__items" role="navigation">
+          <div class="header__nav__item ">
+            <a href="https://goo.gl/photos/puuNvzDrDFiRCo399" target="_blank" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="i-o-17-recap">I/O '17 Recap</a>
+          </div>
+          <div class="header__nav__item ">
+            <a href="https://docs.google.com/document/d/1tXyfavq4DYDogVMqZou17OjCRvh5Dp-Y9fTOu58iGtk/edit?usp=sharing" target="_blank" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="sessions">Holiday</a>
+          </div>
+          <div class="header__nav__item ">
+            <a href="https://www.google.com/flights/#search;f=SFO,OAK,SJC;t=SEA;d=2017-09-01;r=2017-09-05" target="_blank" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="extended">Get Ticket</a>
+          </div>
+          <div class="header__nav__item">
+            <a target="_blank" href="mailto:kylelam@me.com?subject=About%20Kyyles%20IO" data-g-event-category="header:nav" data-g-event-action="click" data-g-event-label="codelabs">Contact Kyyle</a>
+          </div>
+    </nav>
+  </div>
+</div>
+      <main role="main">
+
+
+<div class="hero section  ">
+  <div class="hero__content">
+    <div class="grid ">
+        <div class="grid__item grid__item--12-cols grid__item--7-cols--gt-md">
+  <div class="hero__main ">
+    <div class="hero__logo hero__logo--scrollable">
+      <a href="index.html" data-g-event-category="hero:nav" data-g-event-action="click" data-g-event-label="home">
+<svg width="188" height="133" viewBox="0 0 188 133" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#5471F9" d="M0 111.963h47.71V17.9H0z"/><path fill="#31E8B7" d="M82.85 0L53.308 131.147l7.42 1.642L90.273 1.642z"/><path d="M136.648 14c-28.3 0-51.242 22.745-51.242 50.8 0 28.057 22.942 50.8 51.242 50.8 28.301 0 51.242-22.743 51.242-50.8 0-28.055-22.94-50.8-51.242-50.8" fill="#5471F9"/></g></svg>      </a>
+    </div>
+    <div class="hero__logo hero__logo--spacer">
+      <div class="hero__logo hero__logo--mobile">
+<svg width="188" height="133" viewBox="0 0 188 133" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#5471F9" d="M0 111.963h47.71V17.9H0z"/><path fill="#31E8B7" d="M82.85 0L53.308 131.147l7.42 1.642L90.273 1.642z"/><path d="M136.648 14c-28.3 0-51.242 22.745-51.242 50.8 0 28.057 22.942 50.8 51.242 50.8 28.301 0 51.242-22.743 51.242-50.8 0-28.055-22.94-50.8-51.242-50.8" fill="#5471F9"/></g></svg>      </div>
+    </div>
+    <div class="hero__title hero__title--sm" aria-level="1" role="heading">
+      Kyyle I/O is a weekend-ly developer festival held at the Kirkland You Know Where. See you soon!
+    </div>
+    <div class="hero__date">
+      Any Month 1-31, 2017-2099
+    </div>
+    <div class="hero__location">
+      Kirkland You Know Where, Washington
+    </div>
+  </div>
+</div>
+
+        <div class="grid__item grid__item--12-cols grid__item--5-cols--gt-md">
+  <aside class="hero__box auth__signed_out">
+    <div class="box box--slim">
+      <div class="box__title">Thanks for being part of I/O&#39;17</div>
+      <div class="box__body">Not really sure what to write on a postcard, but thanks so much for being here, had so much fun. Let's practice codejam and do it again. oh right, also practice talking to people, so we make more friends next year :)</div>
+      <div class="box__cta">
+        <a href="https://code.google.com/codejam/past-contests" target="_blank" class="button" data-signin="true">CodeJam</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+    </div>
+  </div>
+</div><div class="featuredVideos featuredVideos--user featuredVideos--loading">
+  <div class="featuredVideos__content">
+    <div class="featuredVideos__header">
+      <div class="featuredVideos__header__title">My I/O &#39;17 sessions</div>
+      <div class="featuredVideos__header__cta">
+        <a href="/io/schedule/?section=myio" target="_blank" class="link">
+<svg width="18" height="13" viewBox="0 0 18 13" xmlns="http://www.w3.org/2000/svg"><path d="M14 4.843V1.357a1 1 0 0 0-1-.996H1a1 1 0 0 0-1 .996v9.961a1 1 0 0 0 1 .996h12a1 1 0 0 0 1-.996V7.832l4 3.984V.859l-4 3.984z" fill="#4A4A4A"/></svg>          See all my I/O videos
+        </a>
+      </div>
+    </div>
+    <div class="featuredVideos__videos featuredVideos__videos--2-cols">
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--2-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="1N9KveJ-FU8">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/1N9KveJ-FU8/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              What&#39;s new in Android
+            </div>
+            <div class="featuredVideos__videos__video__meta__left__subtitle">
+              Chet Haase, Romain Guy, Dan Sandler
+            </div>
+          </div>
+          <div class="featuredVideos__videos__video__meta__right">
+            <div class="featuredVideos__videos__video__meta__right__tag
+            featuredVideos__videos__video__meta__right__tag--green">
+              Android
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--2-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="_ssDaecATCM">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/_ssDaecATCM/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              The Mobile Web: State of the Union
+            </div>
+            <div class="featuredVideos__videos__video__meta__left__subtitle">
+              Rahul Roy-Chowdhury
+            </div>
+          </div>
+          <div class="featuredVideos__videos__video__meta__right">
+            <div class="featuredVideos__videos__video__meta__right__tag
+            featuredVideos__videos__video__meta__right__tag--blue">
+              Web
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><div class="featuredVideos featuredVideos--featured" style="display:none;">
+  <div class="featuredVideos__content">
+    <div class="featuredVideos__header">
+      <div class="featuredVideos__header__title">I/O &#39;17 featured photos and videos</div>
+      <div class="featuredVideos__header__cta">
+        <a onclick="alert('I think I should not put the link here, so you go find it yourself')" class="link">
+<svg width="18" height="13" viewBox="0 0 18 13" xmlns="http://www.w3.org/2000/svg"><path d="M14 4.843V1.357a1 1 0 0 0-1-.996H1a1 1 0 0 0-1 .996v9.961a1 1 0 0 0 1 .996h12a1 1 0 0 0 1-.996V7.832l4 3.984V.859l-4 3.984z" fill="#4A4A4A"/></svg>          See all photos
+        </a>
+      </div>
+    </div>
+    <div class="featuredVideos__videos featuredVideos__videos--4-cols">
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--4-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="Y2VF8tmLFHw">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/Y2VF8tmLFHw/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              Google Keynote
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--4-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="EtQ8Le8-zyo">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/EtQ8Le8-zyo/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              Developer Keynote
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--4-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="1N9KveJ-FU8">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/1N9KveJ-FU8/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              What&#39;s new in Android
+            </div>
+            <div class="featuredVideos__videos__video__meta__left__subtitle">
+              Chet Haase, Romain Guy, Dan Sandler
+            </div>
+          </div>
+          <div class="featuredVideos__videos__video__meta__right">
+            <div class="featuredVideos__videos__video__meta__right__tag
+            featuredVideos__videos__video__meta__right__tag--green">
+              Android
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featuredVideos__videos__video featuredVideos__videos__video--4-cols">
+          <div class="featuredVideos__videos__video__thumbnail"
+               data-ak-youtubemodal-video-id="_ssDaecATCM">
+            <div class="featuredVideos__videos__video__thumbnail__play">
+<svg width="69" height="68" viewBox="0 0 69 68" xmlns="http://www.w3.org/2000/svg"><path d="M34.5 67.2C15.92 67.2.858 52.285.858 33.887.858 15.488 15.92.574 34.5.574c18.58 0 33.642 14.914 33.642 33.313C68.142 52.285 53.08 67.2 34.5 67.2zm-8.41-45.806V46.38l21.026-13.266-21.026-11.72z" fill="#FFF" fill-rule="evenodd" opacity=".8"/></svg>            </div>
+            <img src="https://i1.ytimg.com/vi/_ssDaecATCM/maxresdefault.jpg">
+          </div>
+        <div class="featuredVideos__videos__video__meta">
+          <div class="featuredVideos__videos__video__meta__left">
+            <div class="featuredVideos__videos__video__meta__left__title">
+              The Mobile Web: State of the Union
+            </div>
+          </div>
+          <div class="featuredVideos__videos__video__meta__right">
+            <div class="featuredVideos__videos__video__meta__right__tag
+            featuredVideos__videos__video__meta__right__tag--blue">
+              Web
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="belt belt--teal belt--draggable">
+  <aside class="belt__callout ">
+    <div class="belt__callout__title" aria-level="2" role="heading">
+      Memorable moments from I/O '17
+    </div>
+    <div class="belt__callout__body">
+      Time with my best friend built lots of memory. Check out photos from this year's I/O, sections and after-hours fun. Let's add more to the list soon next year, or in the Kyyle I/O. Drag photos to explore.
+    </div>
+    <div class="belt__callout__aside">
+      <a onclick="alert('I think I should not put the link here, so you go find it yourself')" >
+      See all photos
+      </a>
+    </div>
+  </aside>
+    <div class="belt__draggable belt--teal belt--draggable">
+      <div class="belt__draggable__content belt__draggable__content--index">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/DVsaUgLvAdSdLhNMJBIIJejg-Fe0rWAaYCPRjt850ISnAy0eezdjT05HmmLTsut1AG42V1uytd17RSjZ5jlRUwcIyyTGzpk1p8KCUxZRT-kOd7XclsdCZ1nVuDuG5WBeo-q2xDV0hpD9n11Fdcbwos4Co01sjITCB1-gUrz6jd9sRfuXr29RwOsY5yxDRWZkyAX0eHXfHqYvP0I47L3KXEsWSak-KMHr78ikS500lWFUBYDeaBcC2emo1aYdZapU3JtZGESgMb0hEaEWdqvfkqzC98BO_mcjBbQC96qBCZ-cJeCQBZYhE3urJ6p-IVfwT5xsfuH9ak0YllDCrFsK05vEU6jSPSZFzm8P_QTr6v7eMOv1gUyZ4kJxZouVq_eTc02xDMFXBfWZNEjqKKYYfEafRjZU_Un59djqZIsSUysT65h78C-h5eL4hWAbUDzIin0KJ4i-9uoKLdZ5CANhoD6lxGC2mDg0qdzdpov7thZNaeUEY3gbL8j0kTU6tdV2T9iJaeb5PC8FKu7tB4g_OrB3K-QmEHO4ieAYsxLgTlPoDqYdI-WhevbqOS1wdSEcqug2lWO3Po_5sF1PZvVGVjFqIMjChUqKlrAHMW0aughzxvArdoN3hts8BzwfWMw_-SCGxiI3D2nKdHCoamR1vnHhCNP99RZjeLeqUfulzv4=w1644-h1234-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/j7xegELbic8sOlhb4KMYHXPW9bcHzMtIKJZpZU6_idgiso4nZF9tZmJSqO6AwawjRgQVsWezOCliExtysr4UvvGddhZ89ShwFAMO_ICMvyQyoTIjwebFvbrrlax3OP2arlERcrudN6Zrpr6my-05ESKseqgbz2m7jd8n1OEzIEsrcb6Qlpf1dm3674KUdQIIVVmKo0c93iX6bHlC5dhOaynMjeZLWCEdqp4IwYfgnUfJCleFUgfQTzzwaDF3Wpf7rm_VxzlTf2qGp1Avm4t4UMl7f9JCpF7gmYfRbp2ZfpKwi-m5vUUrRY9lyXJRWWerFKsu5fCRmFlEWHLnYzDnplnGstEYnwcz1pzBaVg0y3AcCvazGZJQXWExqGxQRjZ7uPLbplQaAU5UBuRG9afBOyK9L4AXZJE_DDkw59NA-KLgkWpbzoKE-6viawFaol0oW7KDrfBu8pKgX6Rymt0lM8CcmQZpGJDlLnbUnWvCTn32UQ048PFi_JRAfQqM3BtMrHij2dP2uJBhbqLUPPmY9_5mXKNLE3rcV3b5mXIuyB4u9hZVWazwV5-_EiLXpfeXXBAxWqVDxXZU-ObX7tVirti_yi7JGzKivposnMStm-kpnvhS36ykyWA9u_MCRWH3oYWlheoECQZR9ctcJp2CoVfK6IdGTpFRQRc0iLr7EA=w1644-h926-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/7fM-JurYxSEoJTiqtxXdZihlcacLvGda1zhCWhFdpV2TKjD3w5LeC-iIxCw-xJLRK65CMTH2WUc6b16uGKnI7XJE9dMd22maBpY4oZkE4nUW4yuPvvh_1LupRL4dmAwi0wrewhLRnrVBdLBQTRM38L3NC5465rmV2JX8Xd1vVvGht3hMAY3Pf820PR0Mb-xfswVSl2HEn9UMyzDxYvcU08qZVcHr0XLp69F3W5FH7BFsZwcl5INuOgp5kY4PwFsZJafUra18ZH1HSg1kJr6bnGsOfiHcpqFJ5cGFZcBAx1qZRA9izpxlXQqgt_I9KRn4MCe1-4loLEIKoEWILLcOpuiS5HPDg4JPel6ram5FOm2kAF-DxW40P2u6SNtphpgHWA9w9qVEzesApnqsiWGZs0qxdtF2CycgsOL9tO4niKuIXmMl73mdSkDeOG25GCA6gtucKp3IsOP_K8pyDfRoRLsi2SKYES-WdgDOWOSBaJiFtS6mWwVXmQaxEk8wmBQ_D00D-gDWkD6rm9cbIw9-Ze9RmtxvlD8vZ6Z5n3JdUHF8t_ndf_ehSgUNh5LPbbPDnr2Rhq-yR8Etlnyb0Zn3NNonCjROAbAeors_6YJ0CkKYSbClN_zedy30KUrMJiJQ3-f7-_cyMENCDoeYqjrxkBgXNiHLDEHCmYv6ywpvTUE=w376-h282-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/Llr3mzw8f-F4GymwWmW0JnxOIVXzTtbeR5L6t7-4vwtQA3u6ncccu0VBcLjKMXKvEX05r03Yt4VvoKkqSl3Ge3lc5ubOEMSEzv9HalrL_3VSMYwmX-hTuNpWmDCRxaRiuVuXscqjjaGuue-2HocYBobxcqXpu-y3nQoylTQkwRVPzSUTxVN-WIDLzS0EUbxtGQ8msNA41d-SVI0yppQDp1Gw6sOmDKzyhtcB6KXh2_K5NPGJrRdf-F_NWHoRLKynk4N6eHRzh9U2WW5OYoYLeADsWuqmjUyNoYEBCPbZ5MLXwEslBzkmua6szX_6_9GfvRyn_DXjDdBdSbuXcpAgarl6cu81CHzJR-9bWb_PFiYkjEOCOppmQtPOAXosyEGjBDQIMnkXHK6ImNn3awWVjDbj2RvKuOGM5z528rLXrmqYzeUkGXE-hXlPb2mckEGJjHgJO5Sxpyh7aYSlYAuR1nuoFF4dtlo4XVSd1U2R2601SIeiADm-OLTBuQfiTVwCQwq1lGh1inpXfCFRD6ZbmrDrS81bNn4LV5zbWBCYv8JAfsjJFuNcdatqkUD32AguDNkZWmbkneYbkmYK8tyH3_aEQhrqIZGW9cMm7QhPHQonZIT-d0V2Bb95XxLWP3NdKVPecHjQRc1hZwo-9T0Ralz3oPjlVmbSCJdtNplgf8s=w375-h282-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/URi_SVM9XQ_QtDjdVZNeKxSteUVYHcfmBVgmoPXGzKoxkaLc0M5AfjrEeHL2RjNud6MsMGywj9XnTvSZEKTCRQt7LNDoC62enHIk1Z9T95AXwC4rjhNVUV5s4sxtMNKFZKbThiv3LIhyuYYPyntOPjZlcI59zTTQNCbUpei_JK6MourF_YWiceb-bgUVYGHHHdGT9CGKb66KQVtN9ll_bV0eswFsZnGgsfJlZ2ITQFzRKpMDdAZ_UvvLQ3DP8LeblYhWP8vh0hMwkqHpiipJosZaNF8UC5Ido1aD1LqalwYPHuNbCeKdXoy38KcNzyHkdcT_4u4iqcgd11KdcYBhKMbyXceDo-XWliYRKJR1IVAR1W7DGB4WT5ywDvPR47LnnRWrbxhVHsisvCqamMjv0AD8mH7LGWaHo4nW8XPfevRUTPK1hyU5dS5fzo3PYdh6ae9wAYC3v8u_H_Ps9er-X-RGXwO0syKRPR-jUvLWgBQvF_y4mJVBltfhM7PQERa_Yta1VP2J-ZbozdZ3Qag14_qvcMo-6NhXJMUZq9cj3V-MBBzE9RWPKwIkeX5r4fQmNlHYEAfBug5R4j8GDIuLPQzs3hcJ_tiKNnf3A-cVjdFsYfg_DPC2eH2IeLl5kk_aRlo6pw-a6F47SNq1dtVVctsIybgniGb5bha4e62LE3Y=w1644-h1234-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/8XoSAAyoEbg3YmVs51uNvzKC8Mdc9p213GBF3nAeckxFZ2FSy_K-H7YqJPN4clxmLrxM6l-QfxDAm29X2YgabjvcHtr8-Bzr0mBvf8_A0SQcZEK7QMLgXqOdcLWNLFDUe5171jM7x6AvFYA0uF69u11B-mRA4Dcd2pYCGNpjTVJgmdzZF1exjDEfimKFnt5kAWdvgbubBv3gVKekMbTMUfdfmE3WicviPqEOaYvQkyGCYslA5seyEHOjGYtJj6vg3ONhao2_uJhhEoUk-8c2-42a4_WAZgOdTWXylUCErI9HvVJ95Lf0DtJdE3IgAbjdJowmsLl6du_BO_b3I41AG8kEC9QRUKskTdR5NR3YNCXwUFdZD9mvdCVSVAH3w_wLzh8WqjIDH8ykrKajPJZdX5SiuwwSvkKGlocltHReSZOO-0hJEq2eI51SFBur8dFSpzWpfucocjy4ECmt86la7TuWBD5gPtbG0NPu9EFtFAwWmjeSqcfOAIBtzKJXv_oP9kz_gJT5-Suz_q2W7ZZUGHhO9ZQQ1o1oNTBWeGukpQJf8C5PGXmNWOosb9QQZVkTjxnGdWdXpbTPmClD0NpVCYuPAh-NTprLpk2LwriCwIU9lAct9hnMjkowQymmwsX0ahQEIMzHMnPdTWO52C-QgkK48dynQM1Fg0gk5DBUoVs=w376-h282-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/FRGDBsZQCqHW2rPKneUxoW38R20cBUONNfOptMWU77ZADRGEJL_6mIVE-0DjySU5og_gNd_2k2N0RLIzHKw4gKbZViiuxTiSZS98KsYhLJAMnFdSYZLm09_86LbpCqUlyr7BWWluzD2jIn56hVRAcwcUfXA97aBFXS_8DDhFf83sT09NgxeAfmD4txovF5y2d96uKPHC8hi039qMrm092iG_EIzZ6NjomC30nYAxSWfQvS0RULVAhpLsbz3ASW-X5kCbrg-rmabiz81_hMJVYABMck1CJeG2aq154gqlj-2vZ0KkYg06qyYOnMYYwJuCOehC39otUYWL5eheCoxVW2_fPXzmnJwvYexV6MHJ0mNS7AIXO_BuaVC9aAzabx-e-xxHywqKOkTcqVpRSiwPamArhus_1XZlkzpX6c6jyLhDnDRizQO6GtDqYVAhK6mapojsa9ORxG6131xQSgUmA6oanDdwhE64JnrXu7ZfXYcy19vPyNh8BEAA9A84D7BMVV6L62gc1DyO6LP1QCB0-kcP5cpSCBjOAZ9RKeVIzQ7PI-AN2BLG_ipn3fFMjIZXF0BXobMo38Mlrg1v6AJP4K46TaJOtNtSvgADGs-s5-FPqSM7RY81G__22VWaOGL0aJd2WvSHc1k-k0tWZ3YYGiW5ceXuMLs5I5b4gbXDVj0=w1644-h1234-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/Mv_QUdQ1tK93duPGHlHOHJPIq-DQacIfSReKf7Nz658ONjogVt11Y4W-16Myp4vVuI7ix78h7hIlwQAK92KtYlwy9TISRZgt3gvg4Zob4WzVbdgnjjLs0FnRx-UmTda0uPP7oLzQjYCXf8nUK2OSybFG9vkSPzIyYh3FhYYHRS4qLiRTWk4vYSyXUSJVddHr_z8qfAfT18OSyxNMH2HG7x_5TK9nGyYhxzdNmtUZrVhnCGRvepszfPoF-2_b8nM05abW1ZlEevWiRIkgZhN_3aeY5XaudsBAu_1fj8Ip000K6jwW8mSAh4nUnM_6pjdwrebzkMRAUGADDYuL_EMN_AOAj6eX_QHUn8mNTyVU7Xp3G1zV50eU_YHChNJwJI8vfyVbohMItR5uGUYo_fVssu54IFRYz9H9bJ7JviBVc2LJWuXcYG9CsCEYwvnuUPjTIU_JF8E_H3tLQcQ6YP-I1UEmiA1nmsKPRVLvp7cXauZh3JctBRt3-IoCd8sjo5x0fhRr_qPLsnQUbgXgZWBWtoZVKQztqEZTMJ_6dttLEPtUi5k1rO0HSMIQBYzT2961PRzSGWZ_agfyXbRvR1_iuw6qjUgwHqRjg8dGi1ObXl2SlErNnMFC_mwAFEDgG0j1FxDJkA3KqiVkx-eqYlptSaRexI0UqmKB5kODMCwf7MU=w1218-h1622-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/noWZtoVSzu_eIxPepPvZNPWcMxttF-sqjapDKsfUyGvdj0vW2Nc3j7WH7aWlM-DwUp4qN4n7tTThEx06b3cBx9iDOSuQVxaKLjK9jMm6POIw4X-590bEAORyLbXvW4e7xqoR0HQAchPVeb2TQPTrWbOwx1tdS_mY3g6wzc1jh45G02GQMgcq9Sjse2Ej8DMuHhRM3QTI_oyGfFK4HNMYUOq-47og56wUV453I4dg_1sE6jSOaHmOpbBYFq64Yl3y_8EqZaexVLYP7gnPOzQQVhZ3f8KJyLX-WOrMF5qQyF7j2Zux-Ly-YpHALZb5cV322SfpUlrGIsEN9z0ppzA-tD4O4GbRPBdwRRA_uyvyEqsT6MNLE8xbRgCunYND4TEY3uH89raM27sl-K0_1Q9CFlWHPUPas8D8rWK4U6m-uYvobfZxGMAS2kqheT2mgKs6TngbHuy_CD1SUajBKC6VAUMn-ihRLf49gwdK3X6cL5u1jTiZ8OAfrHIysv_1SBrj5N7BZoU39obbPJ-BdCv-MvO65iI7t5wupyT71tMShsIpYPCLvypJj1DijDscaMcwrZmEW-K7LxsfDFLi4Q9w5w6YbQ037a4Di38MvJbYCDBKLX2TmTCRm7WaunD5jhwV82kXov1soT3WbhYGfjG3GB-a-RvBxbPQge60th77Xeo=w1644-h1234-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/i3yaNJUlInK1fR4eRC5k8j4OPXCsNWb4S6Or-ULwmqp_rENtBzQ6_InsVT_PPkvseBOaV7v0pW5xxkCx6oiqMTSS_oxvU9LbndF77bFJe9laUoX6XKy_eB3-PrGtI3gxDAC8lf22qW4VzrGKJvMVHYOya9cJR053fIi-VIDHO13NN-uE_LlZqC4xjvdCtnuM2aIHGIHyvbAJq2koazrX138N_crhHfdNNPYu_6ZS-086B5FpN1-GykV_rRSCVnlXZAEIHp-Yd9W8I7rLpPr3hQCX9pHOKUx7RihcqI0vSdoxpDTtdyAYQeMxgTDPpGNJ10TObKeVY57QmjpT_RhtFbm7F5BOzHUdCk4mlOjPbOl3KCInv6JAaZmfoVy5XW3T6b4k4yqBcmZ63DbP9LwD7nCRthL0A6oJji-7xaEds4JPOrneZRVYnhh-wp66cSr8tIwjFLJj8tZDp-hvptbSdqSQ0iUQt8Et1o-F8HEP3C6_-KB8dtjkC9G3d7Xvu0SU1-wpn6AX5Dx8uh7udjRI5y3xXdv2L-wdRletrXSif9v_ZvrvkyYiaUMlxYnzZn3y-D9iP2gv245cfcZKRw-FQcSmFZxEjO9-E5rxH8FqZi7Hv1AX0p5eaWdIcbtZpZNMwBAd-z2fE-iWb7JtzZfzgYsGlTdcdD4LEvHHZnz0_FU=w439-h330-no" alt="">
+<img class="belt__image belt__image--flex" src="https://lh3.googleusercontent.com/J9xR5xRqXa35d2WfFIHWbdRvJV4l2Jm428P2jWWZ8h-cOp4_ENB4jaXFToA8JKXit1lJKrYzqqz2xRkuDZmatdRk7BQbOe8N5zHybxccyayedXGlETYyIyoAsi9tdiSN6inHKZs4SWy6iUJJpZraj6-Qa9-6Poh3SoGZQx7PeKiSZ6-jTPkjx2e1iWeEe_y-ZkriVRo5zXOJTa2JDAkki36IGc0IeyK5jRXzlou0JE7C7exLUxl9BotGQPezgxtnHS0__xH_w0J90Q88NW3MgpBNBtmLoYZIsibONGNNK-5U8oIIEamf2uywGr-k3l5TXZ-Q0EHR-3S8mgJR2n5KsobeABpSVxtJ93SRdm3utvaHLvKhlcDfuPWhcJFkA0eXCl8XXmNrLwWg7EKtP5XaCLv8mIxYnxPxdUERFTL2pS86WIUDaWwxykJkigrlYy5F13GhHdzEZtBC2YW6VEb5PDCfpQuwafncC847-UU-MB26iG22pF2Ja74OwL78OcyVX7d1fmmo1SMGsPjcll5JYpEqTCbOezIWkM_Oa45uaTpv88gN-adQ3rBlkIMaIoLEo_MSM3450uXvK9AZ7kbXWqW6wDoQSeZ7bAyRpHyYt0p2MaGwrzKl0vx6irnBcNo1KMUMwr3wutQXM1T1CygDs-ik7Aqn7EF8cXODrO1MnuM=w1218-h1622-no" alt="">      </div>
+    </div>
+</div><div class="linkboxes ">
+  <div class="linkboxes__content">
+
+    <div class="grid grid--padded">
+      <div class="grid__item grid__item--12-cols grid__item--8-cols--gt-md">
+        <div class="linkboxes__header">
+          <div class="linkboxes__title">
+            Codelabs
+          </div>
+          <div class="linkboxes__cta">
+            <a target="_blank" href="https://codelabs.developers.google.com/io2017" class="link">See all codelabs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid--padded">
+      <div class="grid__item grid__item--12-cols grid__item--8-cols--gt-md">
+        <div class="grid grid--padded">
+          <div class="grid__item grid__item--12-cols grid__item--6-cols--gt-sm">
+            <div class="linkboxes__box linkboxes__box--shadow"
+                 data-animation-color="#00E4FF"
+                 data-animation-angle="0"
+>
+
+              <div class="linkboxes__box__row">
+                <div class="linkboxes__box__image">
+                    <img src="https://codelabs.developers.google.com/images/icons/iot.svg">
+                </div>
+                <div class="linkboxes__box__title"></div>
+              </div>
+
+              <div class="linkboxes__box__body">Android Things Assistant</div>
+              <div class="linkboxes__box__subtitle">60 min</div>
+              <div class="linkboxes__box__cta">
+                <a target="_blank" href="https://codelabs.developers.google.com/codelabs/androidthings-assistant/index.html?index=..%2F..%2Fio2017#0">Start</a>
+              </div>
+
+            </div>
+          </div>
+          <div class="grid__item grid__item--12-cols grid__item--6-cols--gt-sm">
+            <div class="linkboxes__box linkboxes__box--shadow"
+                 data-animation-color="#1CE8B5"
+                 data-animation-angle="-320"
+>
+
+              <div class="linkboxes__box__row">
+                <div class="linkboxes__box__image">
+                    <img src="https://codelabs.developers.google.com/images/icons/cloud.png">
+                </div>
+                <div class="linkboxes__box__title"></div>
+              </div>
+
+              <div class="linkboxes__box__body">May be we should learn Android Things</div>
+              <div class="linkboxes__box__subtitle">before summer</div>
+              <div class="linkboxes__box__cta">
+                <a target="_blank" href="https://developer.android.com/things/hardware/developer-kits.html">Get a Kit</a>
+              </div>
+
+            </div>
+          </div>
+          <div class="grid__item grid__item--12-cols grid__item--6-cols--gt-sm">
+            <div class="linkboxes__box linkboxes__box--shadow"
+                 data-animation-color="#FF6C00"
+                 data-animation-angle="356"
+>
+
+              <div class="linkboxes__box__row">
+                <div class="linkboxes__box__image">
+                    <img src="https://codelabs.developers.google.com/images/icons/tensorflow.png">
+                </div>
+                <div class="linkboxes__box__title"></div>
+              </div>
+
+              <div class="linkboxes__box__body">So that we can build a start up (for your bf)</div>
+              <div class="linkboxes__box__subtitle">and for Kyle too</div>
+              <div class="linkboxes__box__cta">
+                <a target="_blank" href="https://www.udacity.com/course/how-to-build-a-startup--ep245">Build a StartUp</a>
+              </div>
+
+            </div>
+          </div>
+          <div class="grid__item grid__item--12-cols grid__item--6-cols--gt-sm">
+            <div class="linkboxes__box linkboxes__box--shadow"
+                 data-animation-color="#FFD500"
+                 data-animation-angle="780"
+>
+
+              <div class="linkboxes__box__row">
+                <div class="linkboxes__box__image">
+                    <img src="https://codelabs.developers.google.com/images/icons/iot.svg">
+                </div>
+                <div class="linkboxes__box__title"></div>
+              </div>
+
+              <div class="linkboxes__box__body">Android Things Weather Station</div>
+              <div class="linkboxes__box__subtitle">50 min</div>
+              <div class="linkboxes__box__cta">
+                <a target="_blank" href="https://codelabs.developers.google.com/codelabs/androidthings-weatherstation/index.html?index=..%2F..%2Fio2017#0">Start</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid__item grid__item--4-cols--gt-sm grid__item--4-cols--gt-md">
+        <div class="linkboxes__animation">
+<div class="slash-animation slash-animation--index">
+  <svg width="390px" height="390px" viewBox="0 0 390 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="pointer-events: none">
+    <g class="slash-extended-3">
+      <g class="primary" transform="translate(188.000000, 54.000000)">
+        <rect class="slash" x="-3.8097185e-13" y="-4.26325641e-13" width="14" height="282" fill="#5775F4"></rect>
+      </g>
+    </g>
+  </svg>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="belt belt--blue">
+      <div class="belt__image" style="background-image: url(https://io2017.storage.googleapis.com/v1/index/IOMap.png)">
+  </div>
+
+  <aside class="belt__callout ">
+    <div class="belt__callout__title" aria-level="2" role="heading">
+      Revisit Kyyle I/O
+    </div>
+    <div class="belt__callout__body">
+      Explore the state, check out the snow and skiing experiences, visit the office for free stuff, and see your classmate your coworker your housemate your best friend over drinks and fun party.
+    </div>
+      <div class="belt__callout__cta">
+        <a class="button" href="https://goo.gl/photos/puuNvzDrDFiRCo399">I/O '17 Recap</a>
+      </div>
+  </aside>
+</div><div class="countdown__section">
+  <div class="countdown js-countdown">
+    <div class="countdown__wrapper" aria-hidden="true">
+      <ul class="countdown__nav">
+        <li class="countdown__nav__item">
+          <button class="countdown__nav__button js-countdown-nav-hours">
+            <span class="countdown__label js-countdown-hours-label"></span> H
+          </button>
+        </li>
+        <li class="countdown__nav__item">
+          <button class="countdown__nav__button js-countdown-nav-minutes">
+            <span class="countdown__label js-countdown-minutes-label"></span> M
+          </button>
+        </li>
+        <li class="countdown__nav__item">
+          <button class="countdown__nav__button js-countdown-nav-seconds">
+            <span class="countdown__label js-countdown-seconds-label"></span> S
+          </button>
+        </li>
+        <li class="countdown__nav__item">
+          <button class="countdown__pause js-countdown-pause">Pause</button>
+        </li>
+      </ul>
+      <div class="countdown__slashes-parent js-countdown-slashes">
+        <div class="countdown__slashes -hours js-countdown-hours"></div>
+        <div class="countdown__slashes -minutes js-countdown-minutes"></div>
+        <div class="countdown__slashes -seconds -active js-countdown-seconds"></div>
+      </div>
+    </div>
+
+    <h2 class="countdown__fallback_time"><span class="countdown__fallback_time-label js-countdown-fallback-time"></span>days left until I/O 2017.</h2>
+  </div>
+</div><div class="hashtag">
+  <div class="hashtag__content">
+    <div class="hashtag__hashtag">
+<svg width="277" height="95" viewBox="0 0 277 95" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#5471F9" d="M195.129 90.674h6.85V2.514h-6.85zm-111.083 0h6.85V24.919h-6.85zM81.709 8.359c0-3.238 2.619-5.845 5.871-5.845 3.253 0 5.872 2.607 5.872 5.845 0 3.237-2.62 5.845-5.872 5.845s-5.871-2.608-5.871-5.845M220.1 9.81l-.014-7.191 40.773-.082.014 7.192z"/><path fill="#40E7B8" d="M232.99 92.868l-6.122-3.06 43.927-87.052 6.122 3.06z"/><path fill="#5471F9" d="M147.112 38.276L143.7 21.693l2.409-.32 3.39 16.581z"/><path stroke="#5471F9" stroke-width=".5" d="M147.112 38.276L143.7 21.693l2.409-.32 3.39 16.581z"/><path fill="#5471F9" d="M154.681 42.097l3.674-16.528 2.33.686-3.691 16.517z"/><path stroke="#5471F9" stroke-width=".5" d="M154.681 42.097l3.674-16.528 2.33.686-3.691 16.517z"/><path fill="#5471F9" d="M160.062 48.656l10.075-13.638 1.852 1.565-10.086 13.62z"/><path stroke="#5471F9" stroke-width=".5" d="M160.062 48.656l10.075-13.638 1.852 1.565-10.086 13.62z"/><path fill="#5471F9" d="M162.295 56.817l14.79-8.357 1.05 2.182-14.794 8.336z"/><path stroke="#5471F9" stroke-width=".5" d="M162.295 56.817l14.79-8.357 1.05 2.182-14.794 8.336z"/><path fill="#5471F9" d="M161.014 65.196l16.922-1.697.074 2.418-16.916 1.677z"/><path stroke="#5471F9" stroke-width=".5" d="M161.014 65.196l16.922-1.697.074 2.418-16.916 1.677z"/><path fill="#5471F9" d="M156.424 72.312l16.152 5.301-.92 2.238-16.138-5.317z"/><path stroke="#5471F9" stroke-width=".5" d="M156.424 72.312l16.152 5.301-.92 2.238-16.138-5.317z"/><path fill="#5471F9" d="M149.331 76.977l12.615 11.353-1.751 1.677-12.597-11.363z"/><path stroke="#5471F9" stroke-width=".5" d="M149.331 76.977l12.615 11.353-1.751 1.677-12.597-11.363z"/><path fill="#5471F9" d="M140.96 78.353l6.81 15.512-2.29.811-6.788-15.513z"/><path stroke="#5471F9" stroke-width=".5" d="M140.96 78.353l6.81 15.512-2.29.811-6.788-15.513z"/><path fill="#5471F9" d="M132.715 76.253l-.02 16.927-2.424-.171.04-16.92z"/><path stroke="#5471F9" stroke-width=".5" d="M132.715 76.253l-.02 16.927-2.424-.171.04-16.92z"/><path fill="#5471F9" d="M126.049 70.982l-6.923 15.462-2.145-1.136 6.937-15.448z"/><path stroke="#5471F9" stroke-width=".5" d="M126.049 70.982l-6.923 15.462-2.145-1.136 6.937-15.448z"/><path fill="#5471F9" d="M122.106 63.49l-12.627 11.34-1.498-1.904 12.634-11.32z"/><path stroke="#5471F9" stroke-width=".5" d="M122.106 63.49l-12.627 11.34-1.498-1.904 12.634-11.32z"/><path fill="#5471F9" d="M121.573 55.072l-16.188 5.192-.582-2.348 16.187-5.17z"/><path stroke="#5471F9" stroke-width=".5" d="M121.573 55.072l-16.188 5.192-.582-2.348 16.187-5.17z"/><path fill="#5471F9" d="M124.507 47.11l-16.917-1.736.417-2.382 16.908 1.754z"/><path stroke="#5471F9" stroke-width=".5" d="M124.507 47.11l-16.917-1.736.417-2.382 16.908 1.754z"/><path fill="#5471F9" d="M130.436 41.046l-14.764-8.403 1.35-2.01 14.748 8.415z"/><path stroke="#5471F9" stroke-width=".5" d="M130.436 41.046l-14.764-8.403 1.35-2.01 14.748 8.415z"/><path fill="#5471F9" d="M138.337 37.891l-10.053-13.653 2.054-1.291 10.034 13.66z"/><path stroke="#5471F9" stroke-width=".5" d="M138.337 37.891l-10.053-13.653 2.054-1.291 10.034 13.66z"/><path fill="#40E7B8" d="M46.11 21.874l-.006-3.01 17.065-.033.005 3.01zm-22.642 0l-.006-3.01 17.064-.033.006 3.01zm-23.462 0L0 18.864l17.064-.033.006 3.01zM46.11 44.615l-.006-3.01 17.065-.034.005 3.01zm-22.642 0l-.006-3.01 17.064-.034.006 3.01zm-23.462 0L0 41.605l17.064-.034.006 3.01z"/><path fill="#32E8B7" d="M21.897 17.472l-3.024.006L18.839.493l3.024-.005z"/><path fill="#40E7B8" d="M21.897 40.008l-3.023.006-.035-16.984 3.024-.006zm0 23.352l-3.023.006-.035-16.984 3.024-.006z"/><path fill="#32E8B7" d="M44.745 17.472l-3.024.006L41.687.493 44.71.488z"/><path fill="#40E7B8" d="M44.745 40.008l-3.024.006-.034-16.984 3.023-.006zm0 23.352l-3.024.006-.034-16.984 3.023-.006z"/></g></svg>    </div>
+  </div>
+</div>      </main>
+
+<footer class="footer">
+  <div class="footer__content">
+    <a class="footer__fab" href="#top" data-scroll aria-label="Back to top"></a>
+    <div class="footer__logo">
+      <!--
+<svg width="158" height="52" viewBox="0 -1 158 52" xmlns="http://www.w3.org/2000/svg"><path d="M60.767 26.69c0-4.56-3.312-7.681-7.152-7.681-3.84 0-7.153 3.12-7.153 7.68 0 4.514 3.313 7.682 7.153 7.682 3.84 0 7.152-3.168 7.152-7.681zm5.569 0c0 7.297-5.713 12.673-12.721 12.673-7.01 0-12.721-5.376-12.721-12.673 0-7.344 5.712-12.673 12.72-12.673 7.009 0 12.722 5.329 12.722 12.673zm22.431 0c0-4.56-3.312-7.681-7.152-7.681-3.84 0-7.153 3.12-7.153 7.68 0 4.514 3.313 7.682 7.153 7.682 3.84 0 7.152-3.168 7.152-7.681m5.569 0c0 7.297-5.713 12.673-12.721 12.673-7.01 0-12.721-5.376-12.721-12.673 0-7.344 5.712-12.673 12.72-12.673 7.009 0 12.722 5.329 12.722 12.673m21.933.048c0-4.464-2.977-7.729-6.77-7.729-3.838 0-7.055 3.265-7.055 7.73 0 4.416 3.216 7.631 7.055 7.631 3.794 0 6.77-3.215 6.77-7.632zm4.895-11.953V37.54c0 9.361-5.52 13.201-12.047 13.201-6.145 0-9.842-4.128-11.234-7.489l4.849-2.016c.864 2.065 2.975 4.513 6.385 4.513 4.175 0 6.767-2.593 6.767-7.44v-1.825h-.19c-1.25 1.536-3.65 2.88-6.674 2.88-6.337 0-12.145-5.52-12.145-12.625 0-7.153 5.808-12.72 12.145-12.72 3.025 0 5.425 1.343 6.674 2.831h.19v-2.064h5.28zm4.451 23.81h5.5v-37h-5.5zm13.926-12.289l11.33-4.705c-.625-1.584-2.497-2.688-4.705-2.688-2.832 0-6.769 2.497-6.625 7.393m13.298 4.561l4.32 2.88c-1.392 2.064-4.753 5.616-10.56 5.616-7.202 0-12.579-5.568-12.579-12.673 0-7.537 5.425-12.673 11.954-12.673 6.577 0 9.793 5.232 10.848 8.064l.576 1.441-16.945 7.01c1.296 2.543 3.313 3.838 6.145 3.838 2.832 0 4.8-1.392 6.241-3.503M38.087 17.836a21.92 21.92 0 0 1 .268 3.43c0 4.032-1.104 9.025-4.657 12.577-3.456 3.6-7.872 5.52-13.729 5.52C9.12 39.364 0 30.532 0 19.683 0 8.832 9.12 0 19.97 0c6 0 10.272 2.352 13.49 5.425l-3.794 3.792c-2.304-2.16-5.424-3.84-9.697-3.84-7.92 0-14.113 6.384-14.113 14.305 0 7.92 6.193 14.305 14.113 14.305 5.136 0 8.065-2.064 9.937-3.936 1.536-1.537 2.574-3.815 2.96-6.84H19.968v-5.375h18.118z" fill-rule="evenodd"/></svg>    --><h1><b>Kyyle</b></h1></div>
+    <div class="footer__row">
+      <nav class="footer__nav" role="navigation">
+        <div class="footer__nav__item">
+          <a href="" onclick="alert('sorry, too lazy to put contact, but cool, you are actually clicking this!')" aria-label="FAQ" data-g-event-category="footer:nav" data-g-event-action="click" data-g-event-label="faq">FAQ</a>
+        </div>
+        <div class="footer__nav__item">
+          <a href="" onclick="alert('sorry, too lazy to put contact, haha I through you would not click this')" aria-label="I/O Community (opens in a new window)" data-g-event-category="footer:nav" data-g-event-action="click" data-g-event-label="i-o-community">I/O Community</a>
+        </div>
+        <div class="footer__nav__item">
+          <a href="" onclick="alert('sorry, too lazy to put contact, seriously, I have nothing more to say, or at least I do not know in the moment')" aria-label="Google Developers (opens in a new window)" data-g-event-category="footer:nav" data-g-event-action="click" data-g-event-label="google-developers">Google Developers</a>
+        </div>
+        <div class="footer__nav__item">
+          <a href="" onclick="alert('sorry, too lazy to put contact, ok, you click them all, good job. and you get a free meal now, tell kyle about you clicking the Privacy')" aria-label="Privacy & Terms (opens in a new window)" data-g-event-category="footer:nav" data-g-event-action="click" data-g-event-label="privacy-terms">Privacy & Terms</a>
+        </div>
+      </nav>
+      <nav class="footer__social">
+        <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/" class="footer__social__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-296.6 411.2 11.2 13.6"><style>.st0{opacity:.7;fill:#616161}</style><path class="st0" d="M-288.9 417.1h-1.4v4.9h-2v-4.9h-1v-1.7h1v-1c0-1.4.6-2.2 2.2-2.2h1.4v1.7h-.8c-.6 0-.7.2-.7.7v.8h1.5l-.2 1.7z"/></svg></a>
+        <a target="_blank" aria-label="Google+" href="https://plus.google.com/" class="footer__social__icon"><svg width="22" height="14" viewBox="0 0 22 14" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" opacity=".7"><path d="M7 6v2.4h3.97c-.16 1.03-1.2 3.02-3.97 3.02-2.39 0-4.34-1.98-4.34-4.42S4.61 2.58 7 2.58c1.36 0 2.27.58 2.79 1.08l1.9-1.83C10.47.69 8.89 0 7 0 3.13 0 0 3.13 0 7s3.13 7 7 7c4.04 0 6.72-2.84 6.72-6.84 0-.46-.05-.81-.11-1.16H7zm15 0h-2V4h-2v2h-2v2h2v2h2V8h2V6z" fill="#616161"/><path d="M-1-5h24v24H-1z"/></g></svg></a>
+        <a target="_blank" aria-label="Twitter" href="https://twitter.com/" class="footer__social__icon"><svg width="17" height="14" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" opacity=".7"><path d="M17 1.657a6.9 6.9 0 0 1-2.003.557A3.537 3.537 0 0 0 16.53.258c-.674.406-1.42.7-2.214.858A3.462 3.462 0 0 0 11.77 0C9.844 0 8.282 1.582 8.282 3.534c0 .277.03.547.09.806C5.474 4.192 2.904 2.785 1.184.647a3.56 3.56 0 0 0-.473 1.777c0 1.226.616 2.308 1.552 2.942a3.439 3.439 0 0 1-1.58-.443v.045c0 1.712 1.202 3.14 2.798 3.466a3.452 3.452 0 0 1-1.575.06c.443 1.404 1.731 2.426 3.258 2.455A6.94 6.94 0 0 1 0 12.412 9.778 9.778 0 0 0 5.346 14c6.416 0 9.924-5.385 9.924-10.056 0-.153-.004-.306-.01-.457A7.142 7.142 0 0 0 17 1.657" fill="#616161"/><path d="M-4-5h24v24H-4z"/></g></svg></a>
+        <a target="_blank" aria-label="YouTube" href="https://www.youtube.com/" class="footer__social__icon"><svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" opacity=".7"><path d="M7.935 9.582V3.989l5.403 2.806-5.403 2.787zM19.8 3.02s-.195-1.371-.795-1.976c-.76-.792-1.613-.796-2.004-.843C14.203 0 10.004 0 10.004 0h-.008S5.798 0 2.999.201c-.391.047-1.243.05-2.004.843C.395 1.65.2 3.02.2 3.02S0 4.631 0 6.242v1.51c0 1.61.2 3.221.2 3.221s.195 1.372.795 1.976c.76.793 1.76.768 2.205.851 1.6.153 6.8.2 6.8.2s4.203-.006 7.001-.208c.391-.046 1.244-.05 2.004-.843.6-.604.795-1.976.795-1.976s.2-1.61.2-3.221v-1.51c0-1.611-.2-3.222-.2-3.222z" fill="#616161"/><path d="M-2-5h24v24H-2z"/></g></svg></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<div class="toast">
+  <div class="toast__container"></div>
+</div>
+
+<template id="toast_message">
+  <div class="toast__message">
+    <div class="toast__contents">
+      <div class="toast__content"></div>
+      <div class="toast__actions"></div>
+    </div>
+  </div>
+</template>
+    <script src="//www.gstatic.com/external_hosted/gsap/v1_18_0/TweenMax.min.js"></script>
+    <script src="//www.gstatic.com/external_hosted/gsap/v1_18_0/plugins/ColorPropsPlugin.min.js"></script>
+    <script src="//www.gstatic.com/external_hosted/pixi/pixi.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+  <script src="https://events.google.com/io/static/js/main-1cd9d9873bb34cb32c7d4018e06657f8.min.js"></script>
+    <script src="https://events.google.com/io/static/js/home-1bcf6e23294d5534dfc775a4cb6bf5f8.min.js"></script>
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-58124138-5', 'auto');
+    ga('require', 'eventTracker', {
+      attributePrefix: 'data-g-'
+    });
+    ga('require', 'outboundLinkTracker');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script async src='https://events.google.com/io/autotrack.min.js'></script>
+</body>
+</html>
