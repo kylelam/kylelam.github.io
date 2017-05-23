@@ -24,7 +24,7 @@ limitations under the License.
 <meta name="theme-color" content="#6284F3">
 
 <link rel="shortcut icon" href="/io/static/images/favicon/favicon-72.png">
-  <title>Google I/O 2017</title>
+  <title>Kyyle I/O</title>
 
 <meta itemprop="name" content="Google I/O 2017">
 <meta itemprop="description" content="Google I/O brings together developers from around the globe for an immersive experience focused on exploring the next generation of tech.">
@@ -45,7 +45,7 @@ limitations under the License.
   <link rel="stylesheet" href="https://events.google.com/io/static/css/home-6df632b97a5d2a635243d9684b10c23c.min.css">
 <meta name="google-site-verification" content="j-mH2xoHnxrJhQIEUgIH7V8b23Z4TUC1eIYOPx0QTC8" />
 </head>
-<body id="top" data-ping-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/ping/v1/rest" data-userdata-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/userdata/v1/rest" data-registration-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/registration/v1/rest" data-firebase-project="gweb-io2017" data-firebase-api="AIzaSyD-_B5QWEie62J0hNe2sth-Gm1ezMwWlpw" data-firebase-sender="755839215930" data-sessions="https://storage.googleapis.com/io2017-festivus/">
+<body onload="alertWinning()" id="top" data-ping-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/ping/v1/rest" data-userdata-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/userdata/v1/rest" data-registration-api="io2015-data.appspot.com/_ah/api/discovery/v1/apis/registration/v1/rest" data-firebase-project="gweb-io2017" data-firebase-api="AIzaSyD-_B5QWEie62J0hNe2sth-Gm1ezMwWlpw" data-firebase-sender="755839215930" data-sessions="https://storage.googleapis.com/io2017-festivus/">
 
 <header class="header " data-scroll-header>
   <div class="header__content">
@@ -600,5 +600,17 @@ limitations under the License.
   </script>
   <script async src='https://www.google-analytics.com/analytics.js'></script>
   <script async src='https://events.google.com/io/autotrack.min.js'></script>
+
+  <script>
+  function alertWinning(){
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        if (!localStorage.won){
+          alert('Congratulations, you’ve won one of the four I/O ticket!');
+        }
+        localStorage.won=true;
+    } 
+  }
+  </script>
 </body>
 </html>
