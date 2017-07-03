@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>PayPal</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script src="js/angular.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" charset="utf-8">
+	</head>
+	<body ng-controller="MainCtrl" id="body">
+    <center>
+      <div class="container-fluid centered">
+        <h1>Your cart</h1>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tr ng-repeat="item in items">
+            <td><img ng-src="{{item.img}}"/></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.quantity}}</td>
+          </tr>
+        </table>
+        <button class="btn btn-primary" onclick="pay();">Pay with PayPal&trade; Here</button>
+      </div>
+  	</div>
+	 </center>
+	 <script src="js/controller.js"></script>
+	 <script>
+  	   function onPay() {
+    	   var itemsArr = [];
+    	   var invoice = {};
+    	   var myItems = {};
+    	   var myItem = {};
+           
+    	   myItem['name'] = "Sphero";
+    	   myItem['description'] = "A robotic ball that can be controlled via apps";
+    	   myItem['quantity'] = "1.0";
+    	   myItem['unitPrice'] = "129.00";
+    	   myItem['taxRate'] = '0.0';
+    	   myItem['taxName'] = 'Tax';
+    	   itemsArr.push(myItem);
+    	   myItems['item'] = itemsArr;
+      	 
+      	 invoice['itemList'] = myItems;
+      	 invoice['paymentTerms'] = 'DueOnReceipt';
+      	 invoice['currencyCode'] = 'USD';
+      	 invoice['discountPercent'] = '0';
+      	 invoice['merchantEmail'] = 'tmesserschmidt@paypal.com';
+      	 invoice['payerEmail'] = 'foo@bar.com';
+          
+      	 var returnUrl = 'walinotpos://paypal-callback';
+      	 var retUrl = encodeURIComponent(returnUrl + "?{result}?Type={Type}&InvoiceId={InvoiceId}&Tip={Tip}&Email={Email}&TxId={TxId}");
+      	 var pphereUrl = "paypalhere://takePayment?returnUrl=" + retUrl;
+      	 pphereUrl = pphereUrl + "&accepted=cash,card,paypal"
+      	 pphereUrl = pphereUrl + "&step=choosePayment";
+      	 pphereUrl = pphereUrl + '&invoice=' + escape(JSON.stringify(invoice));
+      	 console.log(pphereUrl);
+          
+      	 return pphereUrl; 
+      }
+      
+    	function pay() {	
+      	window.location = onPay();
+    	}
+    </script>
+	</body>
+</html>
