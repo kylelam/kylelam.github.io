@@ -15,7 +15,23 @@ h1 {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%); 
+	font-size: 600%;
 }
+
+
+    img.qrcode {
+        padding: 2%; 
+        height:90%; 
+        object-fit: contain; 
+        float: right; 
+        max-width: vh
+    }
+
+
+    div.reminder img {
+        width: 50%;
+    }
+
 </style>
 
 </head>
@@ -27,8 +43,17 @@ h1 {
 	</div>
 	<div id="view" style="display: none;" onclick="displaySwitch()">
 		
-		<div style="float: left;">You got 2 points!</div>
-		<img style="float: right;" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=1"></img>
+		<img id="qrcode" src="https://s3-us-west-2.amazonaws.com/xsharp.co.mywali.static/images/qr/business/FikaHouseKaf%C3%A9/1500267479885-1.svg" class="qrcode"/>
+
+		<div style="padding: 2%; width:auto; overflow:hidden;">
+			<div id="message"><div _ngcontent-tgj-2="" id="message"><b>Fika House Kafé</b><br>You earned <b style="font-size:200%">1</b> of reward this visit!</div></div>
+
+			<div class="reminder">
+				<div style="border: 1px solid black; padding:3%">Take a picture of this page first, then scan/import this QR with the Wali App later!</div>
+				<img src="https://waliqr.azurewebsites.net/app/_res/wali_taking_pic.png"/>
+			</div>
+		</div>
+		<!--<img style="float: right;" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=1"></img>-->
 	</div>
 </body>
 
