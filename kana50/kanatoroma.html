@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="initial-scale = 1, user-scalable = no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
+        <style>
+            @font-face {
+                font-family: SawarabiMincho;
+                src: url(SawarabiMincho-Regular.ttf);
+            }
+
+            * {
+                font-family: SawarabiMincho
+            }
+
+            .display {
+                font-size: 40vw; 
+                text-align: center;
+            }
+
+            .button {
+                text-align: center;
+                background-color: #5ac8fa;
+                margin: 5%;
+                padding-top: 3%;
+                padding-bottom: 3%;
+                border-radius: 1.8vw;
+            }
+        </style>
+        <script>
+            var japaneseList = {    "a"  : { "あ": [　"a", "o", "u" ],
+                                             "い": [　"i", "u", "e" ],
+                                             "う": [　"u", "u", "e" ],
+                                             "え": [　"e", "i", "u" ],
+                                             "お": [　"o", "a", "u" ],
+                                             "あい": [　"a i", "o i", "e i" ],
+                                             "いえ": [　"i e", "e i", "o e" ],
+                                             "うお": [　"u o", "a o", "u a" ],
+                                             "うえ": [　"u e", "u i", "e i" ],
+                                             "おい": [　"o i", "a i", "o u" ] },
+                                    "ka" : {"か": [　"ka", "a", "ke" ],
+                                            "き": [　"ki", "ku", "ka" ],
+                                            "く": [　"ku", "u", "ka" ],
+                                            "け": [　"ke", "ka", "ku" ],
+                                            "こ": [　"ko", "ku", "ke" ],
+                                            "かお": [　"ka o", "ka a", "ko o" ],
+                                            "おか": [　"o ka", "a ko", "a ka" ],
+                                            "きく": [　"ki ku", "ki ko", "ka ku" ],
+                                            "かき": [　"ka ki", "ki ku", "ka ku" ],
+                                            "くい": [　"ku i", "ku ki", "ki ku" ],
+                                            "いく": [　"i ku", "i ko", "ki ku" ],
+                                            "けおり": [　"ke o ri", "ke o i", "ka o i" ],
+                                            "いけ": [　"i ke", "i ko", "ki ke" ],
+                                            "こえ": [　"ko e", "ku o", "ka u" ],
+                                            "かこ": [　"ka ko", "ko ka", "ka o" ] }
+            };
+
+            var currentQuiz = {};
+
+            function onload(){
+                newQuestion();
+            }
+
+            function newQuestion(){
+                var useLines = [ "a", "ka" ];
+
+                var useableList = getUseableList(useLines);
+                var randomIndex = Math.floor(Math.random() * Object.keys(useableList).length);
+                currentQuiz = {};
+                currentQuiz[Object.keys(useableList)[randomIndex]] = useableList[Object.keys(useableList)[randomIndex]];
+                updateScreen(currentQuiz);
+            }
+
+            function getUseableList(lines) {
+                var useableList = {};
+                for (var i =0; i < lines.length; i++) {
+                    useableList = Object.assign(useableList, japaneseList[lines[i]]);
+                }
+                return useableList;
+            }
+
+            function updateScreen(quiz) {
+                document.getElementById("display").innerText = Object.keys(quiz)[0];
+                var answers = JSON.parse( JSON.stringify( quiz[Object.keys(quiz)[0]] ) );
+                for (var i=0; i<3; i++) {
+                    var index = Math.floor(Math.random() * answers.length);
+                    var answer = answers[index];
+                    document.getElementById("option"+i).innerText = answer;
+                    answers.splice(index, 1);
+                }
+            }
+
+            function answer(index) {
+                var answerText = document.getElementById("option"+index).innerText;
+                if (checkAnswer(answerText)) {
+                    alert("You Are Right!");
+                    newQuestion();
+                } else {
+                    alert("Are You Sure?");
+                }
+            }
+
+            function checkAnswer(answerText) {
+                return (currentQuiz[Object.keys(currentQuiz)[0]][0] === answerText);
+            }
+        </script>
+    </head>
+    <body onload="onload()">
+        <div class="display" id="display">
+            - -
+        </div>
+        <div>
+            <div class="button" id="option0" onclick="answer(0)">- - -</div>
+            <div class="button" id="option1" onclick="answer(1)">- - -</div>
+            <div class="button" id="option2" onclick="answer(2)">- - -</div>
+        </div>
+    </body>
+</html>
