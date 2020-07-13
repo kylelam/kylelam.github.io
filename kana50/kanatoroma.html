@@ -14,7 +14,7 @@
             }
 
             .display {
-                font-size: 40vw; 
+                font-size: 30vw; 
                 text-align: center;
             }
 
@@ -37,7 +37,8 @@
                                              "いえ": [　"i e", "e i", "o e" ],
                                              "うお": [　"u o", "a o", "u a" ],
                                              "うえ": [　"u e", "u i", "e i" ],
-                                             "おい": [　"o i", "a i", "o u" ] },
+                                             "おい": [　"o i", "a i", "o u" ] 
+                                             },
                                     "ka" : {"か": [　"ka", "a", "ke" ],
                                             "き": [　"ki", "ku", "ka" ],
                                             "く": [　"ku", "u", "ka" ],
@@ -52,7 +53,8 @@
                                             "けおり": [　"ke o ri", "ke o i", "ka o i" ],
                                             "いけ": [　"i ke", "i ko", "ki ke" ],
                                             "こえ": [　"ko e", "ku o", "ka u" ],
-                                            "かこ": [　"ka ko", "ko ka", "ka o" ] }
+                                            "かこ": [　"ka ko", "ko ka", "ka o" ] 
+                                            }
             };
 
             var currentQuiz = {};
@@ -66,6 +68,10 @@
 
                 var useableList = getUseableList(useLines);
                 var randomIndex = Math.floor(Math.random() * Object.keys(useableList).length);
+
+                if (currentQuiz && Object.keys(currentQuiz)[0] === Object.keys(useableList)[randomIndex]) {
+                    return newQuestion();
+                }
                 currentQuiz = {};
                 currentQuiz[Object.keys(useableList)[randomIndex]] = useableList[Object.keys(useableList)[randomIndex]];
                 updateScreen(currentQuiz);
@@ -93,10 +99,38 @@
             function answer(index) {
                 var answerText = document.getElementById("option"+index).innerText;
                 if (checkAnswer(answerText)) {
-                    alert("You Are Right!");
-                    newQuestion();
+                    swal({
+                        title: "いいですね!",
+                        type: "success",
+                        timer: 1000
+                    }).then(newQuestion);
                 } else {
-                    alert("Are You Sure?");
+                    swal({
+                        title: "ちょっとちがうとおもう…",
+                        type: "error",
+                        timer: 1000
+                    }).then(takeDamage)
+                }
+            }
+
+            hp = 100;
+            function takeDamage() {
+                hp -= 10;
+                document.getElementById("hpText").innerText = hp + " / 100";
+                document.getElementById("hpBar").style.width = hp + "%";
+
+                if (hp <= 20) {
+                    document.getElementById("hpBar").style.backgroundColor = "#ff3b30";
+                }
+                else if (hp <= 40) {
+                    document.getElementById("hpBar").style.backgroundColor = "#ff9500";
+                }
+                else if (hp <= 70) {
+                    document.getElementById("hpBar").style.backgroundColor = "#ffcc00";
+                }
+                
+                if (hp <= 0) {
+                    swal("GAME OVER");
                 }
             }
 
@@ -106,6 +140,12 @@
         </script>
     </head>
     <body onload="onload()">
+        <div>
+            <div style="position: relative;height: 1.5em;border: 2px #8e8e93 solid;border-radius: 10vw; overflow: hidden;">
+                <div id="hpBar" style="background-color: #4cd964; width: 100%; position: absolute; top:0; left:0; height: 1.5em;"></div>
+                <span id="hpText" style="padding-left:5%; position: absolute; top:0; left:0; height: 1.5em;">100 / 100</span>
+            </div>
+        </div>
         <div class="display" id="display">
             - -
         </div>
